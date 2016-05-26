@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section BreadCrumbContent{
+    <li><i class="fa fa-gears"></i> Administration</li>
+    <a href="@Url.Action("Index", "AutoBillGroup")"><i class="fa fa-money"></i> Autobill Group</a>
+    <li class="active">
+        <i class="fa fa-file-o"></i> Create
+    </li>
+}
+
+@section PageTitleContent{
+
+    <i class="fa fa fa-money"></i>Autobill Group
+}
+
+@section MainContent{
+
+    <div id="autobillGroupInfo">
+        <div class="panel panel-info">
+
+            <div class="panel-heading">Autobill Group</div>
+
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="AutoBillGroup">Auto Bill Group</label>
+                            <input class="form-control" id="AutoBillGroup" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="AddressNo">Address No.</label>
+                            <input class="form-control" id="AddressNo">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Priority">Priority</label>
+                            <input class="form-control" id="Priority">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>            
+        </div>
+    </div>
+    <p>
+        <input type="submit" value="Add Autobill Group" class="btn btn-primary" />
+    </p>
+
+}
+
+@section scripts{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1155 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section BreadCrumbContent{
+    <li><i class="fa fa-laptop"></i> Applications</li>
+    <li class="active">Item Inquiry</li>
+}
+
+@section PageTitleContent{
+
+    <i class="fa fa-money"></i>Item Inquiry    
+}
+
+@section MainContent{
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Item Information</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal" id="itemPriceForm">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Item Number</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                                <button class="btn btn-default" type="button" id="addressSearch">Search</button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Pricing UOM</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">HS Code</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">HQ Plan Code</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">HQ Family Gp</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Brand Origin</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">HQ SLS Code</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">HQ Demand Code</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Product Origin</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">List N</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">BWAC</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">HQ Supply Code</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">LCPL</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">AU</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Unit Per Carton</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">SP</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">SKF SPL</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">LCPE</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Nett1</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">SKF EXPL</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">LCPE2</label>
+                                    <div class="row col-sm-8">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" disabled="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Nett 2</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Unit Weight (KG)</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Last 12 Months Highest Selling px (SGD)</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Last 12 Months Average Selling px (SGD)</label>
+
+                                    <div class="col-sm-8">
+                                        <input type="text" disabled="" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                @*<div class="box-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">Item Number</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                            <button class="btn btn-default" type="button" id="addressSearch">Find</button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">Pricing UOM:</label>
+                                <span class="col-sm-7 text-left">test</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">HS Code:</label>
+                                <span class="col-sm-7 text-left">test</span>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label">HQ Plan Code:</label>
+                                <span class="col-sm-7 text-left">test</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">HQ Family Gp:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Brand Origin:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Item Number:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Item Number:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Item Number:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Item Number:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Item Number:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Item Number:</label>
+                                <span class="col-sm-8 control-label">Item Number</span>
+                            </div>
+                        </div>
+                    </div>
+</div>*@
+                
+
+            </div>
+        </div>
+    </div>   
+    
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Additonal Information</h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <div class="form-horizontal" id="additionalInformationfrm">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Description 1</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" disabled="" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Description 3</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" disabled="" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Description 2</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" disabled="" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Description 3a</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" disabled="" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">HQ HS Code</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" disabled="" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Detail 1</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" disabled="" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>         
+        </div>
+    </div>
+</div>   
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">HQ Stock Status</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding table-striped table-condensed">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Warehouse</th>
+                                <th>Reservation</th>
+                                <th>Exstock ATP</th>
+                                <th>WIP</th>
+                                <th>Qty Transfer to</th>
+                                <th>POATP</th>
+                                <th>GIT ATP</th>
+                                <th>INSP ATP</th>
+                                <th>GIT Rf + date</th>
+                            </tr>
+                            <tr>
+                                <td>BP 10 (Tuas)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>BP 20 (Sembawang)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>BP 30 (Jalan Besar)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>BP 51 (Iskandar)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>BP 52 (Others)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Custom Tabs -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">RC Stocks</a></li>
+                    <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="true">Cross Reference</a></li>                
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1">
+                        <div class="box-body table-responsive no-padding table-striped table-condensed">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <th>RC Stocks</th>
+                                        <th>Reservataion</th>
+                                        <th>Exstock ATP</th>
+                                    </tr>
+
+                                    <tr data-toggle="collapse" data-target="#1of1" class="accordion-toggle" style="cursor:pointer">
+                                        <td style="text-align:center"><i class="fa fa-plus-square"></i></td>
+                                        <td>Singapore</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" class="hiddenRow">
+                                            <div class="accordion-body collapse" id="1of1">
+                                                <div class="bs-callout bs-callout-info" style="margin:10px;">
+                                                    <table class="table table-hover table-striped table-condensed">
+                                                        <tr>
+                                                            <th>Branch</th>
+                                                            <th>WH</th>
+                                                            <th>Reservation</th>
+                                                            <th>Exstock ATP</th>
+                                                            <th>UOM</th>
+                                                            <th>MinQty</th>
+                                                            <th>MaxQty</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SG</td>
+                                                            <td>BP10</td>
+                                                            <td>20</td>
+                                                            <td>20</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SG</td>
+                                                            <td>BP20</td>
+                                                            <td>20</td>
+                                                            <td>20</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SG</td>
+                                                            <td>BP30</td>
+                                                            <td>20</td>
+                                                            <td>20</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SG</td>
+                                                            <td>BP51</td>
+                                                            <td>20</td>
+                                                            <td>20</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SG</td>
+                                                            <td>BP52</td>
+                                                            <td>20</td>
+                                                            <td>20</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-toggle="collapse" data-target="#1of2" class="accordion-toggle" style="cursor:pointer">
+                                        <td style="text-align:center"><i class="fa fa-plus-square"></i></td>
+                                        <td>Indonesia</td>
+                                        <td>8</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" class="hiddenRow">
+                                            <div class="accordion-body collapse" id="1of2">
+                                                <div class="bs-callout bs-callout-info" style="margin:10px;">
+                                                    <table class="table table-hover table-striped table-condensed small">
+                                                        <tr>
+                                                            <th>Branch</th>
+                                                            <th>WH</th>
+                                                            <th>Reservation</th>
+                                                            <th>Exstock ATP</th>
+                                                            <th>UOM</th>
+                                                            <th>MinQty</th>
+                                                            <th>MaxQty</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BTM</td>
+                                                            <td>BP10</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BPP</td>
+                                                            <td>BP10</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BDG</td>
+                                                            <td>BP10</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SBY</td>
+                                                            <td>BP10</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-toggle="collapse" data-target="#1of3" class="accordion-toggle" style="cursor:pointer">
+                                        <td style="text-align:center"><i class="fa fa-plus-square"></i></td>
+                                        <td>Malaysia (East)</td>
+                                        <td>6</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" class="hiddenRow">
+                                            <div class="accordion-body collapse" id="1of3">
+                                                <div class="bs-callout bs-callout-info" style="margin:10px;">
+                                                    <table class="table table-hover table-striped table-condensed small">
+                                                        <tr>
+                                                            <th>Branch</th>
+                                                            <th>WH</th>
+                                                            <th>Reservation</th>
+                                                            <th>Exstock ATP</th>
+                                                            <th>UOM</th>
+                                                            <th>MinQty</th>
+                                                            <th>MaxQty</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>EM</td>
+                                                            <td>BP10</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>JB</td>
+                                                            <td>BP10</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>KL</td>
+                                                            <td>BP10</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                            <td>pc</td>
+                                                            <td>2</td>
+                                                            <td>2</td>
+                                                        </tr>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane " id="tab_2">
+                        <div class="box-body table-responsive no-padding table-striped table-condensed">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th>XRef</th>
+                                        <th>Type</th>
+                                        <th>Exstock</th>
+                                        <th>LCPL</th>
+                                        <th>SP</th>
+                                        <th>Nett1</th>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">205-BCA</a></td>
+                                        <td>SB</td>
+                                        <td>1</td>
+                                        <td>4.7451</td>
+                                        <td>4.2706</td>
+                                        <td>5.6942</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">6205-FAG </a></td>
+                                        <td>JP</td>
+                                        <td>1</td>
+                                        <td>4.7451</td>
+                                        <td>4.2706</td>
+                                        <td>5.6942</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">6205-FAG</a></td>
+                                        <td>SB</td>
+                                        <td>1</td>
+                                        <td>4.7451</td>
+                                        <td>4.2706</td>
+                                        <td>5.6942</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">6205-KOY </a></td>
+                                        <td>SB</td>
+                                        <td>1</td>
+                                        <td>4.7451</td>
+                                        <td>4.2706</td>
+                                        <td>5.6942</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">6205-NIS/Y </a></td>
+                                        <td>SB</td>
+                                        <td>1</td>
+                                        <td>4.7451</td>
+                                        <td>4.2706</td>
+                                        <td>5.6942</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+    </div>
+
+    
+
+    @*<div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">HQ Information</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>                
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Item Number</label>
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                <button class="btn btn-default" type="button" id="addressSearch">Search</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Pricing UOM</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>HS Code</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>HQ Plan Code</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>HQ Family Gp</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Brand Origin</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>HQ SLS Code</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>HQ Demand Code</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Product Origin</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>List N</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>BWAC</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>HQ Supply Code</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>LCPL</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>AU</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Unit Per Carton</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>SP</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>SKF SPL</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>LCPE</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Nett1</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>SKF EXPL</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>LCPE2</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" disabled="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Last 12 months highest selling px (SGD)</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Last 12 months average selling px (SGD)</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Nett2</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Unit Weight (KG)</label>
+                        <input type="text" disabled="" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>*@
+
+
+
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        $(function () {
+            //Initialize Select2 Elements
+            $(".select2").select2();
+
+
+        });
+        
+        $('tr').on('shown.bs.collapse', function () {
+            $(this).closest('tr').prev().find(".fa-plus-square").removeClass("fa-plus-square").addClass("fa-minus-square");
+        }).on('hidden.bs.collapse', function () {
+            $(this).closest('tr').prev().find(".fa-minus-square").removeClass("fa-minus-square").addClass("fa-plus-square");
+        });
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\GIMS.DataAccess.dll.config
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\GIMS.DataAccess.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\GIMS.DataAccess.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\EntityFramework.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\GIMS.Entites.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\GIMS.Entites.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\EntityFramework.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\obj\Debug\GIMS.DataAccess.csprojResolveAssemblyReference.cache
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\obj\Debug\GIMS.DataAccess.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\obj\Debug\GIMS.DataAccess.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\obj\Debug\GIMS.DataAccess.Migrations.Initial.resources
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.DataAccess\obj\Debug\GIMS.DataAccess.csproj.GenerateResource.Cache

@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section BreadCrumbContent{
+    <li><i class="fa fa-gears"></i> Administration</li>
+    <a href="@Url.Action("Index", "User")"><i class="fa fa-users"></i> Users</a>
+    <li class="active">
+        <i class="fa fa-file-o"></i> Create
+    </li>
+}
+
+@section PageTitleContent{
+
+    <i class="fa fa fa-user"></i>User
+}
+
+@section MainContent{
+
+    <div id="userGroupInfo">
+        <div class="panel panel-info">
+
+            <div class="panel-heading">User Information</div>
+
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="FirstName">First Name</label>
+                            <input class="form-control" id="FirstName">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="LastName">Last Name</label>
+                            <input class="form-control" id="LastName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Email">Email Address</label>
+                            <input class="form-control"  id="Email" name="Email" >
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="panel panel-info">
+
+            <div class="panel-heading">Account Information</div>
+
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Username">Username</label>
+                            <input class="form-control" id="Username" name="Username">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Email">Password</label>
+                            <input autocomplete="off" class="form-control" data-val-required="" id="Password" name="Password" type="password">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+    @Html.Partial("UserGroups")
+
+    <p>
+        <input type="submit" value="Add User" class="btn btn-primary" />
+    </p>
+
+}
+
+@section scripts{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

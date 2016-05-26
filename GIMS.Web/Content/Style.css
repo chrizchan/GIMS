@@ -1,0 +1,41 @@
+﻿.skin-red .main-header .logo{
+    background-color: #ffffff !important;
+}
+
+body {
+    font-size: 12px;
+}
+
+#itemInquiryForm .box-body .form-group {
+    margin-bottom: 2px;
+    /*font-size: 12px;*/
+}
+
+#additonalInformationForm .box-body .form-group {
+    margin-bottom: 2px;
+    /*font-size: 12px;*/
+}
+
+#itemSearchForm .box-body .form-group {
+    margin-bottom: 2px;
+    /*font-size: 12px;*/
+}
+
+.main-sidebar {
+    font-size: 14px;
+}
+
+
+.news-feed .row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.news-feed .box {
+ display: inline-block;
+}
+
+

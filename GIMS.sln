@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.Web", "GIMS.Web\GIMS.Web.csproj", "{7F1C55B4-788E-4F81-9648-1F6B78A512D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{962AE3A5-283D-4356-85AB-8A2504854A4F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNC.Core", "CNC.Core\CNC.Core.csproj", "{EDB164D8-9B39-4A1B-81C2-A6F1F45DAD6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.Entites", "GIMS.Entites\GIMS.Entites.csproj", "{1913DC9A-E4C9-4FAB-BED0-88E0B525877D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.DataAccess", "GIMS.DataAccess\GIMS.DataAccess.csproj", "{225326A3-5471-4D67-9579-FC88BF1F0BB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F1C55B4-788E-4F81-9648-1F6B78A512D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F1C55B4-788E-4F81-9648-1F6B78A512D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F1C55B4-788E-4F81-9648-1F6B78A512D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F1C55B4-788E-4F81-9648-1F6B78A512D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB164D8-9B39-4A1B-81C2-A6F1F45DAD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB164D8-9B39-4A1B-81C2-A6F1F45DAD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB164D8-9B39-4A1B-81C2-A6F1F45DAD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB164D8-9B39-4A1B-81C2-A6F1F45DAD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1913DC9A-E4C9-4FAB-BED0-88E0B525877D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1913DC9A-E4C9-4FAB-BED0-88E0B525877D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1913DC9A-E4C9-4FAB-BED0-88E0B525877D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1913DC9A-E4C9-4FAB-BED0-88E0B525877D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{225326A3-5471-4D67-9579-FC88BF1F0BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{225326A3-5471-4D67-9579-FC88BF1F0BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{225326A3-5471-4D67-9579-FC88BF1F0BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{225326A3-5471-4D67-9579-FC88BF1F0BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

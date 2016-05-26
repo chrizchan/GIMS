@@ -1,0 +1,74 @@
+﻿@using CNC.Core.Components
+@model GIMS.Web.Models.ItemAdditionalInformationVm
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Additional Information</h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            @*<form class="form-horizontal" id="additonalInformationForm">*@
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Description1, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.Description1, HtmlExtensions.Html5InputTypes.text, "Description1", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Description3, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.Description3, HtmlExtensions.Html5InputTypes.text, "Description3", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Description2, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.Description2, HtmlExtensions.Html5InputTypes.text, "Description2", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Description3a, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.Description3a, HtmlExtensions.Html5InputTypes.text, "Description3a", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.HqHsCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.HqHsCode, HtmlExtensions.Html5InputTypes.text, "HQ HS Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Detail1, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.Detail1, HtmlExtensions.Html5InputTypes.text, "Detail1", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CNC.Core\bin\Release\CNC.Core.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CNC.Core\bin\Release\CNC.Core.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CNC.Core\obj\Release\CNC.Core.csprojResolveAssemblyReference.cache
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CNC.Core\obj\Release\CNC.Core.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CNC.Core\obj\Release\CNC.Core.pdb

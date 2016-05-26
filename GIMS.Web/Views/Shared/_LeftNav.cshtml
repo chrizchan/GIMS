@@ -1,0 +1,154 @@
+﻿@helper ActiveItem(string actionName, string controllerName, string areaName)
+{
+    if (ViewContext.RouteData.Values["action"].ToString() == actionName &&
+    ViewContext.RouteData.Values["controller"].ToString() == controllerName &&
+    (ViewContext.RouteData.DataTokens["area"] == null || ViewContext.RouteData.DataTokens["area"].ToString() == areaName))
+    {
+        @:active
+    }
+}
+
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="@ActiveItem("Index", "Home", "") ">
+                <a href="@Url.Action("Index", "Home", new { area = "" })"><i class="fa fa-dashboard"></i><span> Dashboard</span></a>
+            </li>    
+            <li class="@ActiveItem("Index", "ItemInquiry", "") @ActiveItem("Index", "ItemSearch", "")treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>Application</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@ActiveItem("Index", "ItemInquiry", "") @ActiveItem("Index", "ItemSearch", "")"><a href="@Url.Action("Index", "ItemSearch")"><i class="fa fa-info-circle"></i><span> Item Inquiry</span></a></li>
+                </ul>
+            </li>
+            <li class="@ActiveItem("Index", "ItemMaster", "") treeview">
+                <a href="#">
+                    <i class="fa fa-download"></i>
+                    <span>Downloads</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@ActiveItem("Index", "ItemMaster", "")"><a href="@Url.Action("Index", "ItemMaster")"><i class="fa fa-info-circle"></i><span>Item Master</span></a></li>
+                </ul>
+            </li>
+            <li class="@ActiveItem("Index", "AutoBillGroup", "")@ActiveItem("Create", "AutoBillGroup", "")@ActiveItem("Index", "UserGroup", "")@ActiveItem("Create", "UserGroup", "")@ActiveItem("Index", "Permission", "")@ActiveItem("Create", "Permission", "")@ActiveItem("Index", "User", "")@ActiveItem("Create", "User", "") treeview">
+                <a href="#">
+                    <i class="fa fa-gears"></i>
+                    <span>Administration</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@ActiveItem("Index", "AutoBillGroup", "")@ActiveItem("Create", "AutoBillGroup", "")">
+                        <a href="@Url.Action("Index", "AutoBillGroup")"><i class="fa fa-money"></i><span>AutoBill Groups</span></a>
+                    </li>
+                    @*<li><a href="#"><i class="fa fa-lock"></i> Branch Security</a></li>*@
+                    <li class="@ActiveItem("Index", "UserGroup", "")@ActiveItem("Create", "UserGroup", "")">
+                        <a href="@Url.Action("Index", "UserGroup")"><i class="fa fa-user-secret"></i><span>User Groups</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Permission", "")@ActiveItem("Create", "Permission", "")">
+                        <a href="@Url.Action("Index", "Permission")"><i class="fa fa-lock"></i><span>Permissions</span></a>
+                    </li>
+                    @*<li><a href="#"><i class="fa fa-dollar"></i> Price Security</a></li>
+                <li><a href="#"><i class="fa fa-building"></i> Branch Plant Security</a></li>*@
+                    <li class="@ActiveItem("Index", "User", "")@ActiveItem("Create", "User", "")">
+                        <a href="@Url.Action("Index", "User")"><i class="fa fa-user"></i><span>Users</span></a>
+                    </li>
+
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li><li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+    <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+</li>
+<li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+    <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+</li><li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+    <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+</li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+                        <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+                    </li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles</span></a>
+                    </li><li class="@ActiveItem("Index", "UserRequisition", "")@ActiveItem("Create", "UserRequisition", "")">
+    <a href="@Url.Action("Index", "UserRequisition")"><i class="fa fa-file-text-o"></i><span>User Requisitions</span></a>
+</li>
+                    <li class="@ActiveItem("Index", "Article", "")@ActiveItem("Create", "Article", "")">
+                        <a href="@Url.Action("Index", "Article")"><i class="fa fa-pencil-square-o"></i><span>Articles123</span></a>
+                    </li>
+
+                </ul>
+            </li>
+            @*<li class="treeview">
+                <a href="#">
+                    <i class="fa fa-wrench"></i>    
+                    <span>Tools</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-user"></i> Users</a></li>
+                    <li><a href="#"><i class="fa fa-file-text-o"></i> User Requisition</a></li>
+                </ul>
+            </li>*@
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

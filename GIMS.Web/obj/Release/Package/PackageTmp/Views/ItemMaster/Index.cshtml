@@ -1,0 +1,154 @@
+﻿@using CNC.Core.Components
+@model GIMS.Web.Models.ItemMasterVm
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section BreadCrumbContent{
+    <li><i class="fa fa-laptop"></i> Applications</li>
+    <li class="active"> <i class="fa fa-info-circle"></i> Item Search</li>
+}
+
+@section PageTitleContent{
+
+    <i class="fa fa-info-circle"></i>Item Search
+}
+
+@section MainContent{
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Search Information</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+                @using (Html.BeginForm("Index", "ItemMaster", FormMethod.Get, new { id = "itemMasterForm", @class = "form-horizontal" }))
+                {
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Item Number</label>
+                                    <div class="col-sm-8">
+                                        @Html.TextBox5For(x => x.ItemNo, HtmlExtensions.Html5InputTypes.text, "Item No", "", false, false,false)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <div class="pull-right">
+                            @Html.SubmitButton("Search", "searchBtn", false, "btn btn-info")
+                            <input type="button" class="btn btn-default" value="Cancel" onclick="location.replace('@Url.Action("Index", "ItemMaster")')" />                                                        
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" style="padding:10px 0 10px 0">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+                <i class="fa fa-download"></i> Download
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Item Search Result</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+                
+                <div class="box-body table-responsive no-padding table-striped table-condensed">
+                    <table id="itemSearchTable" class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Short Item No</th>
+                                <th>Item No</th>
+                                <th>Xref Type</th>
+                                <th>Brand</th>
+                                <th>Brand Gp</th>
+                            </tr>
+                            <tr>
+                                <td>205-BCA</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td>6205-FAG</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td>6205-FAG</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td>6205-KOY</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td>205-BCA</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

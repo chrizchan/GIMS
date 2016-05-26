@@ -1,0 +1,267 @@
+﻿
+
+@section HeadContent{
+
+
+}
+
+
+
+@section BreadCrumbContent{
+
+<li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+@*<li class="active">Dashboard</li>*@
+
+}
+
+@section PageTitleContent{
+
+<i class="fa fa-dashboard"></i>Dashboard
+@*<small>Control panel</small>*@
+
+}
+
+@section MainContent{
+    
+<div class="news-feed">
+
+
+    <div class="row">
+        
+        <div class="col-md-12">
+
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="text-bold" href="http://www.slsbearings.com.sg/">SLS Bearings</a>
+                </div>
+                <div class="box-body">
+                    <img class="img-responsive" src="~/Images/slsbearings.jpg" alt="">
+
+                </div>
+                <div class="box-footer">
+                    Welcome to SLS Bearings
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="text-bold" href="/article/content/2">Bearings & Housings</a>
+                </div>
+                <div class="box-body">
+                    <img class="img-responsive" src="~/Images/bearing1.jpg" alt="">
+
+                </div>
+                <div class="box-footer">
+                    Welcome to Bearings & Housings
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="text-bold" href="/article/content/1">Belt</a>
+                </div>
+                <div class="box-body">
+                    <img class="img-responsive" src="~/Images/beltsbar.jpg" alt="">
+                </div>
+                <div class="box-footer">
+                    Welcome to Belt
+                </div>
+            </div>
+            
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="text-bold" href="http://www.slsbearings.com.sg/">SLS Bearings</a>
+                </div>
+                <div class="box-body">
+                    <img class="img-responsive" src="~/Images/slsbearings.jpg" alt="">
+
+                </div>
+                <div class="box-footer">
+                    Welcome to SLS Bearings
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="text-bold" href="/article/content/2">Bearings & Housings</a>
+                </div>
+                <div class="box-body">
+                    <img class="img-responsive" src="~/Images/bearing1.jpg" alt="">
+
+                </div>
+                <div class="box-footer">
+                    Welcome to Bearings & Housings
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="text-bold" href="/article/content/1">Belt</a>
+                </div>
+                <div class="box-body">
+                    <img class="img-responsive" src="~/Images/beltsbar.jpg" alt="">
+                </div>
+                <div class="box-footer">
+                    Welcome to Belt
+                </div>
+            </div>
+
+        </div>
+
+
+        
+
+
+    </div>
+
+        @*<div class="col-md-12">
+
+            @foreach (var item in Model)
+            {
+                var filename = item.Photo != null ? Url.Action("image", "SystemFile", new { id = item.Photo.GuidKey.ToString(), size = "w" }) : string.Empty;
+                var url = item.ExternalUrl != null ? item.ExternalUrl : Url.Action("Content", "Article", new { id = item.Id });
+
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <a class="text-bold" href='@url'>@item.Title</a>
+                    </div>
+                    <div class="box-body">
+                        <img class="img-responsive" src="@filename" alt="" />
+                    </div>
+                    <div class="box-footer">
+                        @item.ShortContent
+                    </div>
+                </div>
+
+            }
+
+
+
+        </div>*@
+
+</div>
+
+
+    @*<div class="row">
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">GIMS - Global Information Management System</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body" style="display: block;">
+                    GIMS is a .NET MVC initiative by SLS Bearing(S) Pte Ltd to bring in information from its group of companies.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Contact Us</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body" style="display: block;">
+                    Contact Us for any feedback or inquiry.
+                    Alternatively, you can use the comment tag in the right panel. 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Latest Inventory Updates</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <ul>
+                        <li>BPP: 27-Jan-2016 6:27</li>
+                        <li>BTM: 28-Jan-2016 13:55</li>
+                        <li>EM-KK: 26-Jan-2016 12:00</li>
+                        <li>EM-LD: 26-Jan-2016 12:00</li>
+                        <li>EM-MIRI: 25-Jan-2016 12:00</li>
+                        <li>EM-SIBU: 26-Jan-2016 12:00</li>
+                        <li>EM-KCH: 26-Jan-2016 12:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
+    </div>*@
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                To learn more about ASP.NET MVC visit
+                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                If you have any questions about ASP.NET MVC visit
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+            </p>
+        </div>
+    </section>
+}
+<h3>We suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+        enables a clean separation of concerns and that gives you full control over markup
+        for enjoyable, agile development. ASP.NET MVC includes many features that enable
+        fast, TDD-friendly development for creating sophisticated applications that use
+        the latest web standards.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5>Add NuGet packages and jump-start your coding</h5>
+        NuGet makes it easy to install and update free libraries and tools.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
+    </li>
+
+    <li class="three">
+        <h5>Find Web Hosting</h5>
+        You can easily find a web hosting company that offers the right mix of features
+        and price for your applications.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
+    </li>
+</ol>*@

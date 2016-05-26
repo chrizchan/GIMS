@@ -1,0 +1,347 @@
+﻿@model GIMS.Web.Models.ItemInquiryVm
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section BreadCrumbContent{
+    <li><i class="fa fa-laptop"></i> Applications</li>
+    <li class="active"><i class="fa fa-info-circle"></i>Item Inquiry</li>
+}
+
+@{
+    var itemNon2nd = "";
+    
+    if (!string.IsNullOrEmpty(ViewBag.ItemNo2nd))
+    {
+        itemNon2nd = string.Format(" - {0}",(string) ViewBag.ItemNo2nd);
+    }
+}
+
+
+@section PageTitleContent{
+
+    <i class="fa fa-info-circle"></i>Item Inquiry  @itemNon2nd
+}
+
+@section MainContent{
+    @using (Html.BeginForm("Index", "ItemInquiry", FormMethod.Get, new {id = "itemInquiryForm", @class = "form-horizontal"}))
+    {
+        @Html.Partial("ItemInformationRC", Model)
+    }
+        @Html.Partial("AdditionalInformation",Model.ItemAdditionalInformationVm)
+
+        @Html.Partial("StockStatus")
+    
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Custom Tabs -->
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">RC Stocks</a></li>
+                        <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="true">Cross Reference</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1">
+                            <div class="box-body table-responsive no-padding table-striped table-condensed">
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th></th>
+                                            <th>RC Stocks</th>
+                                            <th>Reservataion</th>
+                                            <th>Exstock ATP</th>
+                                        </tr>
+
+                                        <tr data-toggle="collapse" data-target="#1of1" class="accordion-toggle" style="cursor:pointer">
+                                            <td style="text-align:center"><i class="fa fa-plus-square"></i></td>
+                                            <td>Singapore</td>
+                                            <td>100</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8" class="hiddenRow">
+                                                <div class="accordion-body collapse" id="1of1">
+                                                    <div class="bs-callout bs-callout-info" style="margin:10px;">
+                                                        <table class="table table-hover table-striped table-condensed">
+                                                            <tr>
+                                                                <th>Branch</th>
+                                                                <th>WH</th>
+                                                                <th>Reservation</th>
+                                                                <th>Exstock ATP</th>
+                                                                <th>UOM</th>
+                                                                <th>MinQty</th>
+                                                                <th>MaxQty</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SG</td>
+                                                                <td>BP10</td>
+                                                                <td>20</td>
+                                                                <td>20</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SG</td>
+                                                                <td>BP20</td>
+                                                                <td>20</td>
+                                                                <td>20</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SG</td>
+                                                                <td>BP30</td>
+                                                                <td>20</td>
+                                                                <td>20</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SG</td>
+                                                                <td>BP51</td>
+                                                                <td>20</td>
+                                                                <td>20</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SG</td>
+                                                                <td>BP52</td>
+                                                                <td>20</td>
+                                                                <td>20</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr data-toggle="collapse" data-target="#1of2" class="accordion-toggle" style="cursor:pointer">
+                                            <td style="text-align:center"><i class="fa fa-plus-square"></i></td>
+                                            <td>Indonesia</td>
+                                            <td>8</td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8" class="hiddenRow">
+                                                <div class="accordion-body collapse" id="1of2">
+                                                    <div class="bs-callout bs-callout-info" style="margin:10px;">
+                                                        <table class="table table-hover table-striped table-condensed small">
+                                                            <tr>
+                                                                <th>Branch</th>
+                                                                <th>WH</th>
+                                                                <th>Reservation</th>
+                                                                <th>Exstock ATP</th>
+                                                                <th>UOM</th>
+                                                                <th>MinQty</th>
+                                                                <th>MaxQty</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BTM</td>
+                                                                <td>BP10</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BPP</td>
+                                                                <td>BP10</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BDG</td>
+                                                                <td>BP10</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SBY</td>
+                                                                <td>BP10</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr data-toggle="collapse" data-target="#1of3" class="accordion-toggle" style="cursor:pointer">
+                                            <td style="text-align:center"><i class="fa fa-plus-square"></i></td>
+                                            <td>Malaysia (East)</td>
+                                            <td>6</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8" class="hiddenRow">
+                                                <div class="accordion-body collapse" id="1of3">
+                                                    <div class="bs-callout bs-callout-info" style="margin:10px;">
+                                                        <table class="table table-hover table-striped table-condensed small">
+                                                            <tr>
+                                                                <th>Branch</th>
+                                                                <th>WH</th>
+                                                                <th>Reservation</th>
+                                                                <th>Exstock ATP</th>
+                                                                <th>UOM</th>
+                                                                <th>MinQty</th>
+                                                                <th>MaxQty</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EM</td>
+                                                                <td>BP10</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>JB</td>
+                                                                <td>BP10</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>KL</td>
+                                                                <td>BP10</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                                <td>pc</td>
+                                                                <td>2</td>
+                                                                <td>2</td>
+                                                            </tr>
+
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane " id="tab_2">
+                            <div class="box-body table-responsive no-padding table-striped table-condensed">
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th>XRef</th>
+                                            <th>Type</th>
+                                            <th>Exstock</th>
+                                            <th>LCPL</th>
+                                            <th>SP</th>
+                                            <th>Nett1</th>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">205-BCA</a></td>
+                                            <td>SB</td>
+                                            <td>1</td>
+                                            <td>4.7451</td>
+                                            <td>4.2706</td>
+                                            <td>5.6942</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">6205-FAG </a></td>
+                                            <td>JP</td>
+                                            <td>1</td>
+                                            <td>4.7451</td>
+                                            <td>4.2706</td>
+                                            <td>5.6942</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">6205-FAG</a></td>
+                                            <td>SB</td>
+                                            <td>1</td>
+                                            <td>4.7451</td>
+                                            <td>4.2706</td>
+                                            <td>5.6942</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">6205-KOY </a></td>
+                                            <td>SB</td>
+                                            <td>1</td>
+                                            <td>4.7451</td>
+                                            <td>4.2706</td>
+                                            <td>5.6942</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">6205-NIS/Y </a></td>
+                                            <td>SB</td>
+                                            <td>1</td>
+                                            <td>4.7451</td>
+                                            <td>4.2706</td>
+                                            <td>5.6942</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+                <!-- nav-tabs-custom -->
+            </div>
+        </div>   
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        $(function () {
+            //Initialize Select2 Elements
+            $(".select2").select2();
+        });
+
+        $('tr').on('shown.bs.collapse', function () {
+            $(this).closest('tr').prev().find(".fa-plus-square").removeClass("fa-plus-square").addClass("fa-minus-square");
+        }).on('hidden.bs.collapse', function () {
+            $(this).closest('tr').prev().find(".fa-minus-square").removeClass("fa-minus-square").addClass("fa-plus-square");
+        });
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
