@@ -1,10 +1,10 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\GIMS.Entites.dll.config
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\GIMS.Entites.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\GIMS.Entites.pdb
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Debug\GIMS.Entites.csprojResolveAssemblyReference.cache
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Debug\GIMS.Entites.dll
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Debug\GIMS.Entites.pdb
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\GIMS.Entites.dll.config
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\EntityFramework.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\EntityFramework.SqlServer.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\EntityFramework.xml
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Debug\GIMS.Entites.csprojResolveAssemblyReference.cache
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Debug\GIMS.Entites.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Debug\GIMS.Entites.pdb
