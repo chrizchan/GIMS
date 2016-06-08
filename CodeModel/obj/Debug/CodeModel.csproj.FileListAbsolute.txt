@@ -1,0 +1,10 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\bin\Debug\CodeModel.dll.config
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\bin\Debug\CodeModel.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\bin\Debug\CodeModel.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\bin\Debug\EntityFramework.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\bin\Debug\EntityFramework.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\obj\Debug\CodeModel.csprojResolveAssemblyReference.cache
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\obj\Debug\CodeModel.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\CodeModel\obj\Debug\CodeModel.pdb

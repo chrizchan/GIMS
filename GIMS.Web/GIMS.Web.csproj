@@ -578,6 +578,7 @@
     <Content Include="Views\User\UserGroups.cshtml" />
     <Content Include="Views\Home\SayHello.cshtml" />
     <Content Include="Views\UserRequisition\Index.cshtml" />
+    <Content Include="Views\UserRequisition\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -591,6 +592,18 @@
     <ProjectReference Include="..\CNC.Core\CNC.Core.csproj">
       <Project>{edb164d8-9b39-4a1b-81c2-a6f1f45dad6c}</Project>
       <Name>CNC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GIMS.Entites\GIMS.Entites.csproj">
+      <Project>{1913dc9a-e4c9-4fab-bed0-88e0b525877d}</Project>
+      <Name>GIMS.Entites</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GIMS.Repository\GIMS.Repository.csproj">
+      <Project>{b61d1197-4ff6-464b-8db3-95671d3660ab}</Project>
+      <Name>GIMS.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GIMS.ServiceLayer\GIMS.ServiceLayer.csproj">
+      <Project>{d9ccbab2-df19-4996-a5c6-c59114b3e34c}</Project>
+      <Name>GIMS.ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

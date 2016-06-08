@@ -49,9 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoBillGroup.cs" />
+    <Compile Include="Branch.cs" />
+    <Compile Include="BranchStock.cs" />
+    <Compile Include="Enum\SortDirection.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemAdditionalInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="Warehouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

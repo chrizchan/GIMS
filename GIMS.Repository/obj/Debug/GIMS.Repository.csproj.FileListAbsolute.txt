@@ -1,0 +1,15 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.csprojResolveAssemblyReference.cache
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Repository.dll.config
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Repository.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Repository.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\EntityFramework.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.DataAccess.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Entites.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\LinqKit.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.DataAccess.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Entites.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\EntityFramework.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.pdb

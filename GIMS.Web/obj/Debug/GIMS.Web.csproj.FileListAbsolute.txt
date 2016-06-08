@@ -99,3 +99,12 @@ D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\zh-Hant\System.Spatial.reso
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.Entites.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.Repository.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.ServiceLayer.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.DataAccess.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\LinqKit.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.Entites.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.Repository.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.ServiceLayer.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.DataAccess.pdb
