@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using GIMS.Entites.Enum;
+using GIMS.Entities.Enum;
 
 namespace GIMS.ServiceLayer.Common
 {

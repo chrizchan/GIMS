@@ -1,11 +1,11 @@
-﻿namespace GIMS.Entities
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
 
+namespace GIMS.Entities
+{
     public class ItemRCInformation
     {
         [Key]
@@ -79,6 +79,8 @@
         public int POAtp { get; set; }
 
         public int GitAtp { get; set; }
+
+        public int GitAtp2 { get; set; }
 
         public int InspAtp { get; set; }
 

@@ -25,15 +25,11 @@ namespace GIMS.ServiceLayer
             return _itemRepository.GetAll(includes);
         }
 
-        public IQueryable<ItemSearchListViewModel> GetAllItemSearchList(params Expression<Func<Item, object>>[] includes)
-        {
-            return _itemRepository.GetAllItemSearchList();
-        }
     }
 
     public interface IItemService : IService<Item>
     {
-        IQueryable<Item> GetAll(params Expression<Func<Item, object>>[] includes);
-        IQueryable<ItemSearchListViewModel> GetAllItemSearchList(params Expression<Func<Item, object>>[] includes);
+
+
     }
 }

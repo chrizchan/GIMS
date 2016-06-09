@@ -3,33 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GIMS.Entities;
+using GIMS.ServiceLayer;
 using GIMS.Web.Models;
 
 namespace GIMS.Web.Controllers
 {
     public class ItemInquiryController : Controller
     {
-        //
-        // GET: /ItemPrice/
 
-        public ActionResult Index(string itemNo)
+        private readonly IItemRCInformationService _itemRCInformationService;
+
+        public ItemInquiryController(IItemRCInformationService itemRCInformationService)
         {
-            var itemInquiry = new ItemInquiryVm
-            {
-                ItemNo = itemNo,
-                ItemAdditionalInformationVm = new ItemAdditionalInformationVm()
-            };
-
-            ViewBag.ItemNo2nd = itemNo;
-            return View(itemInquiry);
+            _itemRCInformationService = itemRCInformationService;
         }
 
-        [ChildActionOnly]
+        public ActionResult Index(string ItemNo2nd)
+        {
+
+            //var itemRcInformation = _itemRCInformationService.Get(x => x.ItemNo2nd.Trim() == itemNo.Trim()) ??
+            //                        new ItemRCInformation();
+
+            //var itemInquiry = new ItemInquiryVm
+            //{
+            //    ItemNo = itemNo,
+            //    ItemRcInformation = itemRcInformation
+            //};
+
+            ViewBag.ItemNo2nd = ItemNo2nd;
+
+            return View();
+        }
+
+
         public ActionResult ItemInformationRC(string itemNo)
         {
-            var model = new ItemInquiryVm();
+            //var model = new ItemInquiryVm();
 
-            return PartialView("ItemInformationRC", model);
+            //GIMS.Entities.Item a = new Item();
+                
+                //itemInformationRCModel = _itemRCInformationService.Get(x => x.ItemNo2nd.Trim() == itemNo.Trim());
+
+            //var itemInformationRC = new ItemRCInformation
+            //{
+            //    ItemNo2nd = ""
+            //};
+
+            var itemInformationRC = _itemRCInformationService.Get(x => x.ItemNo2nd.Trim() == itemNo.Trim()) ??
+                                    new ItemRCInformation();
+
+            return PartialView("ItemInformationRC", itemInformationRC);
         }
 
         [ChildActionOnly]

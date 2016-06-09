@@ -1,4 +1,4 @@
-﻿
+﻿@*@model GIMS.Web.Models.ItemInquiryVm*@
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 
 @{
     var itemNon2nd = "";
-    
+
     if (!string.IsNullOrEmpty(ViewBag.ItemNo2nd))
     {
         itemNon2nd = string.Format(" - {0}",(string) ViewBag.ItemNo2nd);
@@ -26,10 +26,11 @@
 }
 
 @section MainContent{
-    @using (Html.BeginForm("Index", "ItemInquiry", FormMethod.Get, new {id = "itemInquiryForm", @class = "form-horizontal"}))
+    
+    @using (Html.BeginForm("Index", "ItemInquiry", new { itemNo = ViewBag.ItemNo2nd }, FormMethod.Get, new { id = "itemInquiryForm", @class = "form-horizontal" }))
     {
         //@Html.Partial("ItemInformationRC", Model)
-        
+    @*@Html.TextBoxFor(x=>x.ItemNo)*@
         {
             Html.RenderAction("ItemInformationRC", new { itemNo = ViewBag.ItemNo2nd });
         }

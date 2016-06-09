@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GIMS.Entites.Enum
+namespace GIMS.Entities.Enum
 {
     public enum SortDirection
     {

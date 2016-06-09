@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GIMS.Entities;
+
 using GIMS.ServiceLayer;
 using GIMS.ViewModel.Item;
 using GIMS.Web.Models;
@@ -13,12 +13,9 @@ namespace GIMS.Web.Controllers
 {
     public class ItemSearchController : Controller
     {
-
-        private readonly IItemService _itemService;
         private readonly IXRefService _xRefService;
-        public ItemSearchController(IItemService itemService, IXRefService xRefService)
+        public ItemSearchController(IXRefService xRefService)
         {
-            _itemService = itemService;
             _xRefService = xRefService;
         }
 

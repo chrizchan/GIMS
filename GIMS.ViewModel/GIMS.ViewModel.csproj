@@ -63,12 +63,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GIMS.Entites\GIMS.Entities.csproj">
-      <Project>{1913dc9a-e4c9-4fab-bed0-88e0b525877d}</Project>
-      <Name>GIMS.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

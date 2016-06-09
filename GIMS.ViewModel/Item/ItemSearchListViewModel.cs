@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-using GIMS.Entities;
 
 namespace GIMS.ViewModel.Item
 {

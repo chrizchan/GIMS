@@ -8,8 +8,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.Remoting.Contexts;
 using GIMS.DataAccess;
-using GIMS.Entites;
-using GIMS.Entites.Enum;
+using GIMS.Entities;
+using GIMS.Entities.Enum;
 using GIMS.Repository.Common;
 using LinqKit;
 

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using GIMS.Entities;
 using GIMS.Repository;
-using GIMS.Repository.Common;
 using GIMS.ServiceLayer.Common;
 
 namespace GIMS.ServiceLayer

@@ -1,5 +1,5 @@
 ﻿@using CNC.Core.Components
-@model GIMS.Web.Models.ItemInquiryVm
+@model  GIMS.Entities.ItemRCInformation
 
 <div class="row">
     <div class="col-md-12">
@@ -13,237 +13,237 @@
             <!-- /.box-header -->
             <!-- form start -->
             @*<form class="form-horizontal" id="itemInquiryForm">*@
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.ItemNo, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    <div class="input-group input-group-sm">
-                                        @*@Html.TextBoxFor(model => model.ItemNo, htmlAttributes: new { @class = "form-control" })*@
-                                        @Html.TextBox5For(x => x.ItemNo, HtmlExtensions.Html5InputTypes.text, "Item No", "", false, false, false)
-                                        <span class="input-group-btn">
-                                            @*<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>*@
-                                            <a href='@Url.Action("Index", "ItemSearch",new {ItemNo = Model.ItemNo})' class="btn btn-default" role="button"><i class="fa fa-search"></i></a>
-                                            <button class="btn btn-default" type="submit" id="addressSearch">Search</button>
-                                        </span>
-                                    </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ItemNo2nd, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                <div class="input-group input-group-sm">
+                                    @*@Html.TextBoxFor(model => model.ItemNo, htmlAttributes: new { @class = "form-control" })*@
+                                    @Html.TextBox5For(x => x.ItemNo2nd, HtmlExtensions.Html5InputTypes.text, "Item No", "", false, false, false)
+                                    <span class="input-group-btn">
+                                        @*<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>*@
+                                        <a href='@Url.Action("Index", "ItemSearch", new { itemNo = ViewBag.ItemNo2nd })' class="btn btn-default" role="button"><i class="fa fa-search"></i></a>
+                                        <button class="btn btn-default" type="submit" id="addressSearch">Search</button>
+                                    </span>
                                 </div>
+                            </div>
 
-                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.PricingUOM, new { @class = "col-sm-4 control-label" })
-                                @*<label class="col-sm-4 control-label">Pricing UOM</label>*@
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.PricingUOM, HtmlExtensions.Html5InputTypes.text, "Pricing UOM", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.BrandOrigin, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.BrandOrigin, HtmlExtensions.Html5InputTypes.text, "Brand Origin", "", false, false, true)
-                                </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.PricingUom, new { @class = "col-sm-4 control-label" })
+                            @*<label class="col-sm-4 control-label">Pricing UOM</label>*@
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.PricingUom, HtmlExtensions.Html5InputTypes.text, "Pricing UOM", "", false, false, true)
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.HQPlanCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.HQPlanCode, HtmlExtensions.Html5InputTypes.text, "HQ Plan Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.HQFamilyGp, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.HQFamilyGp, HtmlExtensions.Html5InputTypes.text, "HQ Family Gp", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.ProductOrigin, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.ProductOrigin, HtmlExtensions.Html5InputTypes.text, "Product Origin", "", false, false, true)
-                                </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.BrandOrigin, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.BrandOrigin, HtmlExtensions.Html5InputTypes.text, "Brand Origin", "", false, false, true)
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.HQSLSCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.HQSLSCode, HtmlExtensions.Html5InputTypes.text, "HQ SLS Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.HQDemandCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.HQDemandCode, HtmlExtensions.Html5InputTypes.text, "HQ Demand Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.HQSupplyCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.HQSupplyCode, HtmlExtensions.Html5InputTypes.text, "HQ Supply Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.LocalHQCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.LocalHQCode, HtmlExtensions.Html5InputTypes.text, "Local HQ Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.LocalHQDemandCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.LocalHQDemandCode, HtmlExtensions.Html5InputTypes.text, "Local HQ Demand Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.LocalHQFamilyGp, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.LocalHQFamilyGp, HtmlExtensions.Html5InputTypes.text, "Local HQ Family Gp", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.LocalCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.LocalCode, HtmlExtensions.Html5InputTypes.text, "Local Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.LocalDemandCode, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.LocalDemandCode, HtmlExtensions.Html5InputTypes.text, "Local Demand Code", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.LocalFamilyGp, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.LocalFamilyGp, HtmlExtensions.Html5InputTypes.text, "Local Family Gp", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.ABPrice, new { @class = "col-sm-4 control-label" })
-                                <div class="row col-sm-8">
-                                    <div class="col-xs-8">
-                                        @Html.TextBox5For(x => x.ABPrice, HtmlExtensions.Html5InputTypes.text, "AB Price", "", false, false, true)
-                                    </div>
-                                    <div class="col-xs-4">
-                                        @Html.TextBox5For(x => x.ABPrice2nd, HtmlExtensions.Html5InputTypes.text, "", "", false, false, true)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.UnitPerCarton, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.UnitPerCarton, HtmlExtensions.Html5InputTypes.text, "Unit Per Carton", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Unit Weight (KG)</label>
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.UnitWeight, HtmlExtensions.Html5InputTypes.text, "Unit Per Carton", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.ExStockATP, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.ExStockATP, HtmlExtensions.Html5InputTypes.text, "ExStock ATP", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.ResvQty, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.ResvQty, HtmlExtensions.Html5InputTypes.text, "ExStock ATP", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.SkfExplInd, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.SkfExplInd, HtmlExtensions.Html5InputTypes.text, "SKF EXPL IND", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.POATP, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.POATP, HtmlExtensions.Html5InputTypes.text, "PO ATP", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.GitAtp, new { @class = "col-sm-4 control-label" })
-                                <div class="row col-sm-8">
-                                    <div class="col-xs-8">
-                                        @Html.TextBox5For(x => x.GitAtp, HtmlExtensions.Html5InputTypes.text, "GIT ATP", "", false, false, true)
-                                    </div>
-                                    <div class="col-xs-4">
-                                        @Html.TextBox5For(x => x.GitRf, HtmlExtensions.Html5InputTypes.text, "", "", false, false, true)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(x => x.InspAtp, new { @class = "col-sm-4 control-label" })
-                                <div class="col-sm-8">
-                                    @Html.TextBox5For(x => x.InspAtp, HtmlExtensions.Html5InputTypes.text, "INSP ATP", "", false, false, true)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.HQPlanCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.HQPlanCode, HtmlExtensions.Html5InputTypes.text, "HQ Plan Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.HQFamilyGroup, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.HQFamilyGroup, HtmlExtensions.Html5InputTypes.text, "HQ Family Gp", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ProductOrigin, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.ProductOrigin, HtmlExtensions.Html5InputTypes.text, "Product Origin", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.HQSLSCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.HQSLSCode, HtmlExtensions.Html5InputTypes.text, "HQ SLS Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.HQDemandCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.HQDemandCode, HtmlExtensions.Html5InputTypes.text, "HQ Demand Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.HQSupplyCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.HQSupplyCode, HtmlExtensions.Html5InputTypes.text, "HQ Supply Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.LocalHQCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.LocalHQCode, HtmlExtensions.Html5InputTypes.text, "Local HQ Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.LocalHQDemandCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.LocalHQDemandCode, HtmlExtensions.Html5InputTypes.text, "Local HQ Demand Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.LocalHQFamilyGroup, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.LocalHQFamilyGroup, HtmlExtensions.Html5InputTypes.text, "Local HQ Family Gp", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.LocalCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.LocalCode, HtmlExtensions.Html5InputTypes.text, "Local Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.LocalDemandCode, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.LocalDemandCode, HtmlExtensions.Html5InputTypes.text, "Local Demand Code", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.LocalFamilyGroup, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.LocalFamilyGroup, HtmlExtensions.Html5InputTypes.text, "Local Family Gp", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ABPrice, new { @class = "col-sm-4 control-label" })
+                            <div class="row col-sm-8">
+                                <div class="col-xs-8">
+                                    @Html.TextBox5For(x => x.ABPrice, HtmlExtensions.Html5InputTypes.text, "AB Price", "", false, false, true)
+                                </div>
+                                <div class="col-xs-4">
+                                    @Html.TextBox5For(x => x.ABPrice2, HtmlExtensions.Html5InputTypes.text, "", "", false, false, true)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.UnitPerCarton, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.UnitPerCarton, HtmlExtensions.Html5InputTypes.text, "Unit Per Carton", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Unit Weight (KG)</label>
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.UnitWeight, HtmlExtensions.Html5InputTypes.text, "Unit Per Carton", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ExStcokAtp, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.ExStcokAtp, HtmlExtensions.Html5InputTypes.text, "ExStock ATP", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ReserveQty, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.ReserveQty, HtmlExtensions.Html5InputTypes.text, "ExStock ATP", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.SkfExplInd, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.SkfExplInd, HtmlExtensions.Html5InputTypes.text, "SKF EXPL IND", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.POAtp, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.POAtp, HtmlExtensions.Html5InputTypes.text, "PO ATP", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.GitAtp, new { @class = "col-sm-4 control-label" })
+                            <div class="row col-sm-8">
+                                <div class="col-xs-8">
+                                    @Html.TextBox5For(x => x.GitAtp, HtmlExtensions.Html5InputTypes.text, "GIT ATP", "", false, false, true)
+                                </div>
+                                <div class="col-xs-4">
+                                    @Html.TextBox5For(x => x.GitAtp2, HtmlExtensions.Html5InputTypes.text, "", "", false, false, true)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.InspAtp, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @Html.TextBox5For(x => x.InspAtp, HtmlExtensions.Html5InputTypes.text, "INSP ATP", "", false, false, true)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             @*</form>*@
         </div>
     </div>
