@@ -1,4 +1,4 @@
-﻿@model GIMS.Web.Models.ItemInquiryVm
+﻿
 
 @{
     ViewBag.Title = "Index";
@@ -28,11 +28,19 @@
 @section MainContent{
     @using (Html.BeginForm("Index", "ItemInquiry", FormMethod.Get, new {id = "itemInquiryForm", @class = "form-horizontal"}))
     {
-        @Html.Partial("ItemInformationRC", Model)
+        //@Html.Partial("ItemInformationRC", Model)
+        
+        {
+            Html.RenderAction("ItemInformationRC", new { itemNo = ViewBag.ItemNo2nd });
+        }
     }
-        @Html.Partial("AdditionalInformation",Model.ItemAdditionalInformationVm)
+    
+    @*@Html.Partial("AdditionalInformation",Model.ItemAdditionalInformationVm)*@
+    @{Html.RenderAction("AdditionalInformation", new { itemNo = ViewBag.ItemNo2nd });}
 
-        @Html.Partial("StockStatus")
+
+    @*@Html.Partial("StockStatus")*@
+    @{Html.RenderAction("StockStatus", new { itemNo = ViewBag.ItemNo2nd });}
     
         <div class="row">
             <div class="col-md-12">

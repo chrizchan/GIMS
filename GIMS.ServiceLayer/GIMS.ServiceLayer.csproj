@@ -43,17 +43,23 @@
     <Compile Include="Common\IService.cs" />
     <Compile Include="Common\ServiceBase.cs" />
     <Compile Include="ItemAdditionalInformationService.cs" />
+    <Compile Include="ItemRCInformationService.cs" />
     <Compile Include="ItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XRefService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GIMS.Entites\GIMS.Entites.csproj">
+    <ProjectReference Include="..\GIMS.Entites\GIMS.Entities.csproj">
       <Project>{1913dc9a-e4c9-4fab-bed0-88e0b525877d}</Project>
-      <Name>GIMS.Entites</Name>
+      <Name>GIMS.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\GIMS.Repository\GIMS.Repository.csproj">
       <Project>{b61d1197-4ff6-464b-8db3-95671d3660ab}</Project>
       <Name>GIMS.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GIMS.ViewModel\GIMS.ViewModel.csproj">
+      <Project>{eeea0e1b-faad-4f31-97d5-086116c9d24f}</Project>
+      <Name>GIMS.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

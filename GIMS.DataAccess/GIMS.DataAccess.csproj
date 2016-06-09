@@ -51,20 +51,24 @@
     <Compile Include="BranchConfiguration.cs" />
     <Compile Include="BranchStockConfiguration.cs" />
     <Compile Include="GIMSContext.cs" />
+    <Compile Include="HQStockStatusConfirguration.cs" />
     <Compile Include="ItemAdditionalInformationConfiguration.cs" />
     <Compile Include="ItemConfiguration.cs" />
+    <Compile Include="ItemRCInformationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserConfiguration.cs" />
     <Compile Include="WarehouseConfiguration.cs" />
+    <Compile Include="XRefConfiguration.cs" />
+    <Compile Include="XRefValueConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GIMS.Entites\GIMS.Entites.csproj">
+    <ProjectReference Include="..\GIMS.Entites\GIMS.Entities.csproj">
       <Project>{1913dc9a-e4c9-4fab-bed0-88e0b525877d}</Project>
-      <Name>GIMS.Entites</Name>
+      <Name>GIMS.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

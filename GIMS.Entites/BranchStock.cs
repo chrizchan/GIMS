@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-
-namespace GIMS.Entites
+namespace GIMS.Entities
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     public class BranchStock
     {
         public int Id { get; set; }
@@ -35,10 +34,12 @@ namespace GIMS.Entites
         [StringLength(10)]
         public string PlanCode { get; set; }
 
+        public int? MinQty { get; set; }
+
+        public int? MaxQty { get; set; }
+
         public DateTime DateUpdated { get; set; }
 
         public Branch Branch { get; set; }
-
-        public Item Item { get; set; }
     }
 }

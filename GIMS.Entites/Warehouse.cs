@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
-namespace GIMS.Entites
+namespace GIMS.Entities
 {
     public partial class Warehouse
     {

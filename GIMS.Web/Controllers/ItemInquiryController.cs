@@ -24,5 +24,28 @@ namespace GIMS.Web.Controllers
             return View(itemInquiry);
         }
 
+        [ChildActionOnly]
+        public ActionResult ItemInformationRC(string itemNo)
+        {
+            var model = new ItemInquiryVm();
+
+            return PartialView("ItemInformationRC", model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult AdditionalInformation(string itemNo)
+        {
+            var model = new ItemAdditionalInformationVm();
+
+            return PartialView("AdditionalInformation", model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult StockStatus(string itemNo)
+        {
+
+            return PartialView("StockStatus");
+        }
+
     }
 }

@@ -13,25 +13,33 @@ namespace GIMS.Web.Controllers
 
         private readonly IItemService _itemService;
         private readonly IItemAdditionalInformationService _itemAdditionalInformationService;
+        private readonly IBranchStockService _branchStockService;
 
 
-        public HomeController(IItemService itemService, IItemAdditionalInformationService itemAdditionalInformationService)
+        public HomeController(IItemService itemService, 
+            IItemAdditionalInformationService itemAdditionalInformationService,
+            IBranchStockService branchStockService)
         {
             _itemService = itemService;
             _itemAdditionalInformationService = itemAdditionalInformationService;
+            _branchStockService = branchStockService;
         }
 
         public ActionResult Index()
         {
-            var x1 = _itemAdditionalInformationService.GetAll();
-            var t1 = _itemService.GetAll().ToList();
-            var a = _itemService.GetAll(x=>x.ItemAdditionalInformation).ToList();
-            var b = a.Count();
+            //var x1 = _itemAdditionalInformationService.GetAll();
+            //var t1 = _itemService.GetAll().ToList();
+           // var a = _itemService.GetAll(x=>x.ItemAdditionalInformation).ToList();
+            //var b = a.Count();
 
-            foreach (var item in a)
-            {
-                var c = a;
-            }
+            //var bscnt = _branchStockService.GetCount();
+            //var bslist =_branchStockService.GetAll(x => x.Branch,x=>x.ItemRcInformation).ToList();
+            
+
+            //foreach (var item in a)
+            //{
+            //    var c = a;
+            //}
 
             
 

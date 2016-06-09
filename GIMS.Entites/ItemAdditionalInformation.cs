@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-
-namespace GIMS.Entites
+namespace GIMS.Entities
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     public class ItemAdditionalInformation
     {
         [Key]
@@ -32,7 +31,5 @@ namespace GIMS.Entites
         public string Detail1 { get; set; }
 
         public DateTime DateUpdated { get; set; }
-
-        public Item Item { get; set; }
     }
 }

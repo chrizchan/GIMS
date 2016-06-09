@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
-using GIMS.Entites;
+using GIMS.Entities;
 
 namespace GIMS.DataAccess
 {
@@ -23,7 +23,7 @@ namespace GIMS.DataAccess
             //HasRequired(t => t.Item).WithOptional(u => u.ItemAdditionalInformation); 
 
             Property(e => e.Desctiption1)
-               .IsUnicode(false);
+                .IsUnicode(false);
 
             Property(e => e.Desctiption2)
                 .IsUnicode(false);

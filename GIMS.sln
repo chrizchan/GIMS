@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{962AE3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNC.Core", "CNC.Core\CNC.Core.csproj", "{EDB164D8-9B39-4A1B-81C2-A6F1F45DAD6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.Entites", "GIMS.Entites\GIMS.Entites.csproj", "{1913DC9A-E4C9-4FAB-BED0-88E0B525877D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.Entities", "GIMS.Entites\GIMS.Entities.csproj", "{1913DC9A-E4C9-4FAB-BED0-88E0B525877D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.DataAccess", "GIMS.DataAccess\GIMS.DataAccess.csproj", "{225326A3-5471-4D67-9579-FC88BF1F0BB3}"
 EndProject
@@ -27,6 +27,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.Repository", "GIMS.Repository\GIMS.Repository.csproj", "{B61D1197-4FF6-464B-8DB3-95671D3660AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeModel", "CodeModel\CodeModel.csproj", "{79AA087C-C5C1-4EE4-ADD7-A0FA0E582128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMS.ViewModel", "GIMS.ViewModel\GIMS.ViewModel.csproj", "{EEEA0E1B-FAAD-4F31-97D5-086116C9D24F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +68,10 @@ Global
 		{79AA087C-C5C1-4EE4-ADD7-A0FA0E582128}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79AA087C-C5C1-4EE4-ADD7-A0FA0E582128}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79AA087C-C5C1-4EE4-ADD7-A0FA0E582128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEA0E1B-FAAD-4F31-97D5-086116C9D24F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEA0E1B-FAAD-4F31-97D5-086116C9D24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEA0E1B-FAAD-4F31-97D5-086116C9D24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEA0E1B-FAAD-4F31-97D5-086116C9D24F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GIMS.Entites;
+using GIMS.Entities;
 using GIMS.Repository;
 using GIMS.ServiceLayer.Common;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
-using GIMS.Entites;
+using GIMS.Entities;
 
 namespace GIMS.DataAccess
 {
@@ -43,7 +43,7 @@ namespace GIMS.DataAccess
             //.HasForeignKey(c => new { c.ShortItemNo });
 
             Property(e => e.BranchId)
-                .IsUnicode(false);
+             .IsUnicode(false);
 
             Property(e => e.WarehouseCode)
                 .IsUnicode(false);

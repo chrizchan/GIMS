@@ -55,8 +55,10 @@
     <Compile Include="Common\IRepository.cs" />
     <Compile Include="Common\RepositoryBase.cs" />
     <Compile Include="ItemAdditionalInformationRepository.cs" />
+    <Compile Include="ItemRCInformationRepository.cs" />
     <Compile Include="ItemRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XRefRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -67,9 +69,13 @@
       <Project>{225326a3-5471-4d67-9579-fc88bf1f0bb3}</Project>
       <Name>GIMS.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GIMS.Entites\GIMS.Entites.csproj">
+    <ProjectReference Include="..\GIMS.Entites\GIMS.Entities.csproj">
       <Project>{1913dc9a-e4c9-4fab-bed0-88e0b525877d}</Project>
-      <Name>GIMS.Entites</Name>
+      <Name>GIMS.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GIMS.ViewModel\GIMS.ViewModel.csproj">
+      <Project>{EEEA0E1B-FAAD-4F31-97D5-086116C9D24F}</Project>
+      <Name>GIMS.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

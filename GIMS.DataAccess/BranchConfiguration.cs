@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
-using GIMS.Entites;
+using GIMS.Entities;
 
 namespace GIMS.DataAccess
 {
@@ -12,7 +12,7 @@ namespace GIMS.DataAccess
         public BranchConfiguration()
         {
             Property(e => e.BranchId)
-                           .IsUnicode(false);
+                          .IsUnicode(false);
 
             Property(e => e.Name)
                 .IsUnicode(false);

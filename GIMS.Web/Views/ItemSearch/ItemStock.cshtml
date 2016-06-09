@@ -1,4 +1,4 @@
-﻿<div class="box-body table-responsive no-padding table-striped table-condensed">
+﻿@*<div class="box-body table-responsive no-padding table-striped table-condensed">
     <table id="itemSearchTable" class="table table-hover">
         <tbody>
             <tr>
@@ -96,4 +96,76 @@
             </tr>
         </tbody>
     </table>
+</div>*@
+
+@model PagedList.IPagedList<GIMS.ViewModel.Item.ItemSearchListViewModel>
+<div class="box-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-condensed">
+                    <tr>
+                        <th>Item No</th>
+                        <th>XRef</th>
+                        <th>Xref Type</th>
+                        <th>Brand</th>
+                        <th>Brand Gp</th>
+                        <th>GpQtyAvail</th>
+                        <th>Description1</th>
+                        <th>Description2</th>
+                        <th>Search Text</th>
+                        <th>Major Type</th>
+                        <th>Short Item No</th>
+                        <th>G ItemNo2nd</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.ItemNo2nd)*@
+                                @Html.ActionLink(item.ItemNo2nd, "Index", "ItemInquiry", new {itemNo = item.ItemNo2nd},null)
+                            </td>
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.XrefItemNo)*@
+                                @Html.ActionLink(item.XrefItemNo, "Index", "ItemInquiry", new { itemNo = item.XrefItemNo },null)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.XType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Brand)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BrandGroup)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GpQtyAvail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Searchtext)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MajorType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShortItemNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GItemNo2nd)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        </div>
+    </div>
 </div>
