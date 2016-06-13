@@ -7,17 +7,21 @@ using System.Text;
 
 namespace GIMS.Entities
 {
-    public partial class Warehouse
+    public class Warehouse
     {
-        public int Id { get; set; }
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //public int Id { get; set; }
 
+        [Key, Column(Order = 0)]
         [Required]
         [StringLength(50)]
         public string BranchId { get; set; }
 
+        [Key, Column(Order = 1)]
         [Required]
         [StringLength(50)]
-        public string WarehouseCode { get; set; }
+        public string WarehouseId { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -26,6 +30,6 @@ namespace GIMS.Entities
         [StringLength(100)]
         public string Description { get; set; }
 
-        public DateTime DataUpdated { get; set; }
+        public DateTime DataUpdated { get; set; }        
     }
 }

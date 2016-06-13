@@ -38,24 +38,37 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Date</th>
+                                <th>Action</th>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td>Superuser</td>
                                 <td>superuser@yahoo.com</td>
                                 <td>25/05/2016</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "User", new {id = 1})" class="btn btn-default btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a href="@Url.Action("Delete", "User", new { id = 1 })" onclick=" return confirm('Are you sure you want to delete this record?'); " class="btn btn-default btn-xs"><i class="fa fa-trash-o"></i></a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td>JohnDoe</td>
                                 <td>JohnDoe@yahoo.com</td>
                                 <td>25/05/2016</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "User", new { id = 1 })" class="btn btn-default btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a href="@Url.Action("Delete", "User", new { id = 1 })" onclick=" return confirm('Are you sure you want to delete this record?'); " class="btn btn-default btn-xs"><i class="fa fa-trash-o"></i></a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Harry Smith</td>
                                 <td>Harry</td>
                                 <td>Harry@yahoo.com</td>
                                 <td>25/05/2016</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "User", new { id = 1 })" class="btn btn-default btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a href="@Url.Action("Delete", "User", new { id = 1 })" onclick=" return confirm('Are you sure you want to delete this record?'); " class="btn btn-default btn-xs"><i class="fa fa-trash-o"></i></a>
+                                </td>
                             </tr>
 
                         </tbody>

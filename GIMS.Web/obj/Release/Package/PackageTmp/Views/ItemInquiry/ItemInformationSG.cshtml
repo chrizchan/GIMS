@@ -10,8 +10,6 @@
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 </div>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
             <form class="form-horizontal" id="itemInquiryForm">
                 <div class="box-body">
                     <div class="row">
@@ -20,7 +18,6 @@
                                 <label class="col-sm-4 control-label">Item Number</label>
                                 <div class="col-sm-8">
                                     <div class="input-group input-group-sm">
-                                        @*@Html.TextBoxFor(model => model.ItemNo, htmlAttributes: new { @class = "form-control"})*@
                                         @Html.TextBox5For(x => x.ItemNo, HtmlExtensions.Html5InputTypes.text, "Item No", "", false, false, false)
                                         <span class="input-group-btn">
                                             <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>

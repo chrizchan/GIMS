@@ -45,7 +45,7 @@ namespace GIMS.DataAccess
             Property(e => e.BranchId)
              .IsUnicode(false);
 
-            Property(e => e.WarehouseCode)
+            Property(e => e.WarehouseId)
                 .IsUnicode(false);
 
             Property(e => e.UOM)
@@ -53,6 +53,12 @@ namespace GIMS.DataAccess
 
             Property(e => e.PlanCode)
                 .IsUnicode(false);
+
+            HasRequired(p => p.Warehouse)
+                .WithMany().WillCascadeOnDelete(false);
+
+            HasRequired(p => p.Branch)
+                .WithMany().WillCascadeOnDelete(false);
 
 
         }

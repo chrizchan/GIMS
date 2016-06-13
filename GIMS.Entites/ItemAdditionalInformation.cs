@@ -13,16 +13,16 @@ namespace GIMS.Entities
         public int ShortItemNo { get; set; }
 
         [StringLength(100)]
-        public string Desctiption1 { get; set; }
+        public string Description1 { get; set; }
 
         [StringLength(100)]
-        public string Desctiption2 { get; set; }
+        public string Description2 { get; set; }
 
         [StringLength(100)]
-        public string Desctiption3 { get; set; }
+        public string Description3 { get; set; }
 
         [StringLength(100)]
-        public string Desctiption3a { get; set; }
+        public string Description3a { get; set; }
 
         [StringLength(50)]
         public string HqHsCode { get; set; }

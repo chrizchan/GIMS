@@ -1,128 +1,92 @@
-﻿<div class="box-body table-responsive no-padding table-striped table-condensed">
-    <table id="itemSearchTable" class="table table-hover">
-        <tbody>
-            <tr>
-                <th>Item No</th>
-                <th>XRef</th>
-                <th>Xref Type</th>
-                <th>Brand</th>
-                <th>Brand Gp</th>
-                <th>SGP</th>
-                <th>CHN</th>
-                <th>IDN</th>
-                <th>MYS</th>
-                <th>MNG</th>
-                <th>Others</th>
-                <th>Description1</th>
-                <th>Description2</th>
-                <th>Search Text</th>
-                <th>Major Type</th>
-                <th>Short Item No</th>
-                <th>G ItemNo2nd</th>
-            </tr>
-            <tr>
-                <td>@Html.ActionLink("6205-KOY", "Index", "ItemInquiry", new { itemNo = "6205-KOY" }, null)</td>
-                <td>@Html.ActionLink("205-BCA", "Index", "ItemInquiry", new { itemNo = "205-BCA" }, null)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>@Html.ActionLink("6205-KOY", "Index", "ItemInquiry", new { itemNo = "6205-KOY" }, null)</td>
-                <td>@Html.ActionLink("205-BCA", "Index", "ItemInquiry", new { itemNo = "205-BCA" }, null)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>@Html.ActionLink("6205-KOY", "Index", "ItemInquiry", new { itemNo = "6205-KOY" }, null)</td>
-                <td>@Html.ActionLink("205-BCA", "Index", "ItemInquiry", new { itemNo = "205-BCA" }, null)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>@Html.ActionLink("6205-KOY", "Index", "ItemInquiry", new { itemNo = "6205-KOY" }, null)</td>
-                <td>@Html.ActionLink("205-BCA", "Index", "ItemInquiry", new { itemNo = "205-BCA" }, null)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>@Html.ActionLink("205-BCA", "Index", "ItemInquiry", new { itemNo = "205-BCA" }, null)</td>
-                <td>@Html.ActionLink("6205-KOY", "Index", "ItemInquiry", new { itemNo = "6205-KOY" }, null)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+﻿@model PagedList.IPagedList<GIMS.ViewModel.Item.ItemSearchListViewModel>
+
+
+
+<div class="box-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-condensed">
+                    <tr>
+                        <th>Item No</th>
+                        <th>XRef</th>
+                        <th>Xref Type</th>
+                        <th>Brand</th>
+                        <th>Brand Gp</th>
+                        <th>SGP</th>
+                        <th>CHN</th>
+                        <th>IDN</th>
+                        <th>MYS</th>
+                        <th>MNG</th>
+                        <th>Others</th>
+                        <th>Description1</th>
+                        <th>Description2</th>
+                        <th>Search Text</th>
+                        <th>Major Type</th>
+                        <th>Short Item No</th>
+                        <th>G ItemNo2nd</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.ActionLink(item.ItemNo2nd, "Index", "ItemInquiry", new { ItemNo2nd = item.ItemNo2nd }, null)
+                            </td>
+                            <td>
+                                @Html.ActionLink(item.XrefItemNo, "Index", "ItemInquiry", new { ItemNo2nd = item.XrefItemNo }, null)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.XType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Brand)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BrandGroup)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalStocksSGP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalStocksCHN)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalStocksIDN)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalStocksMYS)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalStocksMNG)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalStocksOthers)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Searchtext)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MajorType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShortItemNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GItemNo2nd)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        </div>
+    </div>
 </div>

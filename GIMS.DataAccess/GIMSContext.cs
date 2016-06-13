@@ -17,7 +17,7 @@ namespace GIMS.DataAccess
 
         public  DbSet<Branch> Branches { get; set; }
         public  DbSet<BranchStock> BranchStocks { get; set; }
-        public  DbSet<HQStockStatus> HQStockStatuses { get; set; }
+        public DbSet<HQStockStatus> HQStockStatuses { get; set; }
         public  DbSet<Item> Items { get; set; }
         public  DbSet<ItemAdditionalInformation> ItemAdditionalInformations { get; set; }
         public  DbSet<ItemRCInformation> ItemRCInformations { get; set; }
@@ -25,6 +25,7 @@ namespace GIMS.DataAccess
         public  DbSet<Warehouse> Warehouses { get; set; }
         public  DbSet<XrefValue> XrefValues { get; set; }
         public DbSet<XRef> Xrefs { get; set; }
+        
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

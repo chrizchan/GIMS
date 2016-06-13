@@ -11,6 +11,9 @@ namespace GIMS.DataAccess
     {
         public HQStockStatusConfirguration()
         {
+
+            ToTable("HQStockStatuses");
+
             Property(e => e.WarehouseCode)
                 .IsUnicode(false);
 

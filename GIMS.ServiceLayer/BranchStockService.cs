@@ -6,6 +6,7 @@ using System.Text;
 using GIMS.Entities;
 using GIMS.Repository;
 using GIMS.ServiceLayer.Common;
+using GIMS.ViewModel.ItemInquiry;
 
 namespace GIMS.ServiceLayer
 {
@@ -23,10 +24,18 @@ namespace GIMS.ServiceLayer
         {
             return _branchStockRepository.GetAll(includes);
         }
+
+        public List<BranchStockListViewModel> GetBranchStockList(int shortItemNo)
+        {
+            var list = _branchStockRepository.GetBranchStockList(shortItemNo);
+
+            return list;
+        }
     }
 
     public interface IBranchStockService : IService<BranchStock>
     {
         IQueryable<BranchStock> GetAll(params Expression<Func<BranchStock, object>>[] includes);
+        List<BranchStockListViewModel> GetBranchStockList(int shortItemNo);
     }
 }

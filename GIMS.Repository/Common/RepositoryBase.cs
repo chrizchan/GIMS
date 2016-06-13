@@ -100,13 +100,7 @@ namespace GIMS.Repository.Common
             return query;
 
         }
-        public IQueryable<T> GetMany(Expression<Func<T, bool>> @where, params Expression<Func<T, object>>[] includes)
-        {
 
-            var query = includes.Aggregate(DbSet, (current, item) => current.Include(item));
-            return query.AsExpandable().Where(where);
-
-        }
 
         public int GetCount()
         {
@@ -116,6 +110,11 @@ namespace GIMS.Repository.Common
         public int GetCount(Expression<Func<T, bool>> @where)
         {
             return DbSet.AsExpandable().Where(where).Count();
+        }
+
+        public IList<T> GetMany(Expression<Func<T, bool>> @where)
+        {
+            return DbSet.Where(where).ToList();
         }
 
         public IList<T> GetMany<TKey>(Func<T, TKey> orderBySelector, int page, int pageSize, SortDirection sortDirection)

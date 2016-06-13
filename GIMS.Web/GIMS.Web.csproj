@@ -599,6 +599,8 @@
     <Content Include="Views\User\UserGroups.cshtml" />
     <Content Include="Views\UserRequisition\Index.cshtml" />
     <Content Include="Views\UserRequisition\Create.cshtml" />
+    <Content Include="Views\ItemInquiry\BranchStocks.cshtml" />
+    <Content Include="Views\ItemInquiry\CrossReferenceList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

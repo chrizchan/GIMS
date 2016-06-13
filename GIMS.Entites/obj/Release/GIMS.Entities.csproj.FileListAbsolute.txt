@@ -1,0 +1,10 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Release\GIMS.Entities.dll.config
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Release\GIMS.Entities.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Release\GIMS.Entities.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Release\EntityFramework.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Release\EntityFramework.SqlServer.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Release\EntityFramework.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\bin\Release\EntityFramework.SqlServer.xml
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Release\GIMS.Entities.csprojResolveAssemblyReference.cache
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Release\GIMS.Entities.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Entites\obj\Release\GIMS.Entities.pdb

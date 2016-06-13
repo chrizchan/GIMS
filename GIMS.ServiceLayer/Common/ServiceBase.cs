@@ -55,6 +55,12 @@ namespace GIMS.ServiceLayer.Common
             return _repository.GetCount(where);
         }
 
+        public IList<T> GetMany(Expression<Func<T, bool>> @where)
+        {
+            return _repository.GetMany(where);
+        }
+
+
         public IList<T> GetMany<TKey>(Func<T, TKey> orderBySelector, int page, int pageSize, SortDirection sortDirection)
         {
             return _repository.GetMany(orderBySelector, page, pageSize, sortDirection);

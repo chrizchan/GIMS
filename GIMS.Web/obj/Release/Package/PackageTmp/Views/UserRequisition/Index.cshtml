@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "User Requisitions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section BreadCrumbContent{
+    <li><i class="fa fa-gears"></i> Administration</li>
+    <li class="active"> <i class="fa fa-file-text-o"></i> User Requisitions</li>
+}
+
+@section PageTitleContent{
+
+    <i class="fa fa-file-text-o"></i>User Requisitions
+}
+
+@section MainContent{
+
+    <div class="row" style="padding-bottom:10px">
+        <div class="col-md-12">
+            <a class="btn btn-success pull-right" href="@Url.Action("Create", "UserRequisition")"><i class="fa fa-file-o"></i><span>New</span></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">User Requisitions</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+
+                <div class="box-body table-responsive no-padding table-striped table-condensed">
+                    <table id="itemSearchTable" class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Approve By</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                            <tr>
+                                <td>Jerry Hansen</td>
+                                <td>JHansen</td>
+                                <td></td>
+                                <td>Pending</td>
+                                <td>25/05/2016</td>
+                            </tr>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>JohnDoe</td>
+                                <td>John Doe</td>
+                                <td>Approved</td>
+                                <td>25/05/2016</td>
+                            </tr>
+                            <tr>
+                                <td>Harry Smith</td>
+                                <td>Harry</td>
+                                <td>John Doe</td>
+                                <td>Approved</td>
+                                <td>25/05/2016</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+﻿@model List<GIMS.ViewModel.ItemInquiry.BranchStockListViewModel>
+
+<div class="box-body table-responsive no-padding table-striped table-condensed">
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>RC Stocks</th>
+                <th>Reservataion</th>
+                <th>Exstock ATP</th>
+            </tr>
+            @{
+                var ctr = 1;
+                var cnt = Model.Count();
+            }
+            @foreach (var item in Model)
+            {
+                <tr data-toggle="collapse" data-target="@string.Format("#{0}of{1}",ctr,cnt)" class="accordion-toggle" style="cursor: pointer">
+                    <td style="text-align: center"><i class="fa fa-plus-square"></i></td>
+                    <td>@item.BranchName</td>
+                    <td>@item.Reservation</td>
+                    <td>@item.ExStockAtp</td>
+                </tr>
+
+                <tr>
+                    <td colspan="8" class="hiddenRow">
+                        <div class="accordion-body collapse" id="@string.Format("{0}of{1}",ctr,cnt)">
+                            <div class="bs-callout bs-callout-info" style="margin: 10px;">
+                                <table class="table table-hover table-striped table-condensed">
+                                    <tr>
+                                        <th>Branch</th>
+                                        <th>WH</th>
+                                        <th>Reservation</th>
+                                        <th>Exstock ATP</th>
+                                        <th>UOM</th>
+                                        <th>MinQty</th>
+                                        <th>MaxQty</th>
+                                    </tr>
+                                    
+                                    @foreach (var bs in item.BranchStocks)
+                                    {
+                                        <tr>
+                                            <td>@bs.Branch.Name</td>
+                                            <td>@bs.Warehouse.Name</td>
+                                            <td>@bs.ReserveQty</td>
+                                            <td>@bs.ExStockAtp</td>
+                                            <td>@bs.UOM</td>
+                                            <td>@bs.MinQty</td>
+                                            <td>@bs.MaxQty</td>
+                                        </tr>
+                                    }
+
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                ctr++;
+            }
+        </tbody>
+    </table>
+</div>

@@ -8,17 +8,21 @@ namespace GIMS.Entities
 
     public class BranchStock
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
+        [Key, Column(Order = 0)]
+        [Required]
         public int ShortItemNo { get; set; }
 
+        [Key, Column(Order = 1)]
         [Required]
         [StringLength(50)]
         public string BranchId { get; set; }
 
+        [Key, Column(Order = 2)]
         [Required]
         [StringLength(50)]
-        public string WarehouseCode { get; set; }
+        public string WarehouseId { get; set; }
 
         public int QtyOnHand { get; set; }
 
@@ -41,5 +45,7 @@ namespace GIMS.Entities
         public DateTime DateUpdated { get; set; }
 
         public Branch Branch { get; set; }
+
+        public Warehouse Warehouse { get; set; }
     }
 }

@@ -69,12 +69,14 @@ namespace GIMS.Web.App_Start
             kernel.Bind<IBranchStockRepository>().To<BranchStockRepository>();
             kernel.Bind<IXRefRepository>().To<XRefRepository>();
             kernel.Bind<IItemRCInformationRepository>().To<ItemRCInformationRepository>();
+            kernel.Bind<IHQStockStatusRepository>().To<HQStockStatusRepository>();
 
             kernel.Bind<IItemAdditionalInformationService>().To<ItemAdditionalInformationService>();
             kernel.Bind<IItemService>().To<ItemService>();
             kernel.Bind<IBranchStockService>().To<BranchStockService>();
             kernel.Bind<IXRefService>().To<XRefService>();
             kernel.Bind<IItemRCInformationService>().To<ItemRCInformationService>();
+            kernel.Bind<IHQStockStatusService>().To<HQStockStatusService>();
         }        
     }
 }

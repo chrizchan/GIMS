@@ -28,5 +28,6 @@ namespace GIMS.Entities
         public string DateUpdated { get; set; }
 
         public ICollection<BranchStock> BranchStocks { get; set; }
+
     }
 }

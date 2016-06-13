@@ -13,10 +13,8 @@ namespace GIMS.DataAccess
         {
 
             //HasOptional(s => s.BranchStocks).WithRequired().WillCascadeOnDelete(false);
-            Property(e => e.BranchId)
-                .IsUnicode(false);
 
-            Property(e => e.WarehouseCode)
+            Property(e => e.WarehouseId)
                 .IsUnicode(false);
 
             Property(e => e.Name)

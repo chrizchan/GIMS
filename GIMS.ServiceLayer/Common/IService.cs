@@ -15,6 +15,8 @@ namespace GIMS.ServiceLayer.Common
         T Get(Expression<Func<T, bool>> where);
         int GetCount();
         int GetCount(Expression<Func<T, bool>> @where);
+
+        IList<T> GetMany(Expression<Func<T, bool>> @where);
         IList<T> GetMany<TKey>(Func<T, TKey> orderBySelector, int page, int pageSize,
             SortDirection sortDirection);
         IList<T> GetMany<TKey>(Expression<Func<T, bool>> where, Func<T, TKey> orderBySelector, int page, int pageSize,

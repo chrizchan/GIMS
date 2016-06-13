@@ -39,13 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BranchService.cs" />
     <Compile Include="BranchStockService.cs" />
     <Compile Include="Common\IService.cs" />
     <Compile Include="Common\ServiceBase.cs" />
+    <Compile Include="HQStockStatusService.cs" />
     <Compile Include="ItemAdditionalInformationService.cs" />
     <Compile Include="ItemRCInformationService.cs" />
     <Compile Include="ItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WarehouseService.cs" />
     <Compile Include="XRefService.cs" />
   </ItemGroup>
   <ItemGroup>

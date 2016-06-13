@@ -22,16 +22,16 @@ namespace GIMS.DataAccess
             //Property(c => c.Id).HasColumnName("ShortItemNo").HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             //HasRequired(t => t.Item).WithOptional(u => u.ItemAdditionalInformation); 
 
-            Property(e => e.Desctiption1)
+            Property(e => e.Description1)
                 .IsUnicode(false);
 
-            Property(e => e.Desctiption2)
+            Property(e => e.Description2)
                 .IsUnicode(false);
 
-            Property(e => e.Desctiption3)
+            Property(e => e.Description3)
                 .IsUnicode(false);
 
-            Property(e => e.Desctiption3a)
+            Property(e => e.Description3a)
                 .IsUnicode(false);
 
             Property(e => e.HqHsCode)

@@ -9,7 +9,7 @@ namespace GIMS.Repository.Common
     public interface IRepository<T>
     {
         IQueryable<T> GetAll();
-        IQueryable<T> GetMany(Expression<Func<T, bool>> @where, params Expression<Func<T, object>>[] includes);
+        //IQueryable<T> GetMany(Expression<Func<T, bool>> @where, params Expression<Func<T, object>>[] includes);
         IQueryable<T> GetAll(params Expression<Func<T, object>>[] includes);
         T Get(Expression<Func<T, bool>> where);
         T Add(T entity);
@@ -19,6 +19,8 @@ namespace GIMS.Repository.Common
         int GetCount();
         int GetCount(Expression<Func<T, bool>> where);
 
+        IList<T> GetMany(Expression<Func<T, bool>> @where);
+        
         IList<T> GetMany<TKey>(Func<T, TKey> orderBySelector, int page, int pageSize, SortDirection sortDirection);
         IList<T> GetMany<TKey>(Expression<Func<T, bool>> where, Func<T, TKey> orderBySelector, int page, int pageSize, SortDirection sortDirection);
 

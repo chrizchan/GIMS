@@ -1,90 +1,58 @@
-﻿<div class="row">
-    <div class="col-md-12">
-        <div class="box box-info">
-            <div class="box-header">
-                <h3 class="box-title">Stock Status - HQ</h3>
-                <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding table-striped table-condensed">
-                <table class="table table-hover">
-                    <tbody>
+﻿@model List<GIMS.Entities.HQStockStatus>
+<div class="box-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-condensed">
+                    <tr>
+                        <th>Warehouse</th>
+                        <th>Reservation</th>
+                        <th>Exstock ATP</th>
+                        <th>WIP</th>
+                        <th>Qty Transfer to</th>
+                        <th>POATP</th>
+                        <th>GIT ATP</th>
+                        <th>INSP ATP</th>
+                        <th>GIT Rf + date</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
                         <tr>
-                            <th>Warehouse</th>
-                            <th>Reservation</th>
-                            <th>Exstock ATP</th>
-                            <th>WIP</th>
-                            <th>Qty Transfer to</th>
-                            <th>POATP</th>
-                            <th>GIT ATP</th>
-                            <th>INSP ATP</th>
-                            <th>GIT Rf + date</th>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WarehouseCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Reservation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ExStockAtp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WIP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.QtyTransferTo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.POAtp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GITAtp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.INSPAtp)
+                            </td>
+                            <td>
+                                @string.Format("{0}    {1}", item.GITRf, item.GITDate == null ? "" : item.GITDate.Value.ToString("dd/MM/yyyy"))
+                            </td>                          
                         </tr>
-                        <tr>
-                            <td>BP 10 (Tuas)</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>BP 20 (Sembawang)</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>BP 30 (Jalan Besar)</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>BP 51 (Iskandar)</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>BP 52 (Others)</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
+                    }
+
+
                 </table>
             </div>
-            <!-- /.box-body -->
+
         </div>
     </div>
 </div>

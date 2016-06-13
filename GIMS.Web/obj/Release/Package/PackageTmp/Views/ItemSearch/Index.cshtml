@@ -1,6 +1,7 @@
 ﻿@using CNC.Core.Components
+@using PagedList.Mvc
 
-@model GIMS.Web.Models.ItemStockOption
+@model PagedList.IPagedList<GIMS.ViewModel.Item.ItemSearchListViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -28,9 +29,6 @@
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div>
-                <!-- /.box-header -->
-                <!-- form start -->
-                @*<form class="form-horizontal" id="itemSearchForm">*@
                 @using (Html.BeginForm("Index", "ItemSearch",FormMethod.Get, new {id = "itemSearchForm", @class = "form-horizontal"}))
                 {
                     <div class="box-body">
@@ -39,7 +37,8 @@
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">Item Number</label>
                                     <div class="col-sm-8">
-                                        @Html.TextBox5For(x=>x.ItemNo,HtmlExtensions.Html5InputTypes.text,"Item No","",false,false,false)
+                                        @*@Html.TextBox5For(x=>x.ItemNo,HtmlExtensions.Html5InputTypes.text,"Item No","",false,false,false)*@
+                                        @Html.TextBox("ItemNo", ViewBag.ItemNo as string, new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +47,8 @@
                                 @*@Html.CheckBoxBootstrapFor(x => x.IsXref, "IsXref", "Xref", Model.IsXref == true, true, false)*@
                                 <div class="checkbox">
                                         <label>
-                                           @Html.CheckBoxFor(x => x.IsXref)
+                                            @*@Html.CheckBoxFor(x => x.IsXref)*@
+                                            @Html.CheckBox("IsXref", (bool)ViewBag.IsXref == true)
                                             XRef
                                         </label>
                                     </div>
@@ -59,18 +59,20 @@
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">Brand</label>
                                     <div class="col-sm-8">
-                                        @Html.TextBox5For(x=>x.Brand,HtmlExtensions.Html5InputTypes.text,"Brand","",false,false,false)
+                                        @*@Html.TextBox5For(x=>x.Brand,HtmlExtensions.Html5InputTypes.text,"Brand","",false,false,false)*@
+                                        @Html.TextBox("Brand", ViewBag.Brand as string, new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2">                                
-                                @Html.CheckBoxBootstrapFor(x => x.IsStockByCountry, "IsStockByCountry", "Stock By Country", Model.IsStockByCountry == true,true,false)
-                                @*<div class="checkbox">
+                                @*@Html.CheckBoxBootstrapFor(x => x.IsStockByCountry, "IsStockByCountry", "Stock By Country", Model.IsStockByCountry == true,true,false)*@
+                                <div class="checkbox">
                                         <label>
-                                            @Html.EditorFor(x => x.IsStockByCountry)
+                                            @*@Html.EditorFor(x => x.IsStockByCountry)*@
+                                            @Html.CheckBox("IsStockByCountry", (bool)ViewBag.IsStockByCountry == true)
                                             Stock By Country
                                         </label>
-                                    </div>*@                         
+                                    </div>                         
                             </div>
                         </div>
                         <div class="row">
@@ -79,7 +81,8 @@
                                     <label class="col-sm-4 control-label">XRef Item Number</label>
 
                                     <div class="col-sm-8">
-                                        @Html.TextBox5For(x => x.XRef, HtmlExtensions.Html5InputTypes.text, "XRef", "", false, false,false)
+                                        @*@Html.TextBox5For(x => x.XRef, HtmlExtensions.Html5InputTypes.text, "XRef", "", false, false,false)*@
+                                        @Html.TextBox("XRef", ViewBag.XRef as string, new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +92,8 @@
                                     <label class="col-sm-4 control-label">Major Type</label>
 
                                     <div class="col-sm-8">
-                                        @Html.TextBox5For(x => x.MajorType, HtmlExtensions.Html5InputTypes.text, "Major Type", "", false, false,false)                                        
+                                        @*@Html.TextBox5For(x => x.MajorType, HtmlExtensions.Html5InputTypes.text, "Major Type", "", false, false,false)*@   
+                                        @Html.TextBox("MajorType", ViewBag.MajorType as string, new { @class = "form-control" })                                     
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +104,9 @@
                                     <label class="col-sm-4 control-label">Search text</label>
 
                                     <div class="col-sm-8">
-                                        @Html.TextBox5For(x => x.SearchText, HtmlExtensions.Html5InputTypes.text, "Search Text", "", false, false,false)
+                                        @*@Html.TextBox5For(x => x.SearchText, HtmlExtensions.Html5InputTypes.text, "Search Text", "", false, false,false)*@
+                                        @Html.TextBox("SearchText", ViewBag.SearchText as string, new { @class = "form-control" })
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +116,8 @@
                                     <label class="col-sm-4 control-label">Brand Group</label>
 
                                     <div class="col-sm-8">
-                                        @Html.TextBox5For(x => x.BrandGroup, HtmlExtensions.Html5InputTypes.text, "Brand Group", "", false, false,false)
+                                        @*@Html.TextBox5For(x => x.BrandGroup, HtmlExtensions.Html5InputTypes.text, "Brand Group", "", false, false,false)*@
+                                        @Html.TextBox("BrandGroup", ViewBag.BrandGroup as string, new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +147,94 @@
                     </div>
                 </div>
             
-                @(Model.IsStockByCountry ? Html.Partial("ItemStockByCountry") : Html.Partial("ItemStock"))
+                @*<div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped table-condensed">
+                                    <tr>
+                                        <th>Item No</th>
+                                        <th>XRef</th>
+                                        <th>Xref Type</th>
+                                        <th>Brand</th>
+                                        <th>Brand Gp</th>
+                                        <th>GpQtyAvail</th>
+                                        <th>Description1</th>
+                                        <th>Description2</th>
+                                        <th>Search Text</th>
+                                        <th>Major Type</th>
+                                        <th>Short Item No</th>
+                                        <th>G ItemNo2nd</th>
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ItemNo2nd)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Xref)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.XType)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Brand)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BrandGroup)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.GpQtyAvail)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description2)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Searchtext)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.MajorType)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ShortItemNo)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.GItemNo2nd)
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>*@
+                
+                @((bool)ViewBag.IsStockByCountry ? Html.Partial("ItemStockByCountry",Model) : Html.Partial("ItemStock",Model))
+                
+                @*@Html.Partial("ItemStock",Model)*@
+                
+                <div class="box-footer clear-fix">
+
+
+                    <ul class="col-md-8 pull-left">
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                    </ul>   
+
+                    <div class="col-md-4 pull-right">
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, sort = ViewBag.CurrentSort, ItemNo = ViewBag.ItemNo }), new PagedListRenderOptions { UlElementClasses = new[] { "pagination pagination-sm no-margin pull-right" } })
+                        </ul>
+                    </div>
+                </div>
+
+                @*@(Model.IsStockByCountry ? Html.Partial("ItemStockByCountry") : Html.Partial("ItemStock"))*@
 
             </div>
         </div>

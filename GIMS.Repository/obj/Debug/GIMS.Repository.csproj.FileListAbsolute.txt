@@ -19,3 +19,5 @@ D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\System.Runtime
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.ServiceLayer.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.ServiceLayer.pdb
