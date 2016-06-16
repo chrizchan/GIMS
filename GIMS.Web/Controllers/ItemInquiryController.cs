@@ -15,21 +15,27 @@ namespace GIMS.Web.Controllers
 
         private readonly IItemService _itemService;
         private readonly IItemRCInformationService _itemRCInformationService;
+        private readonly IItemSgInformationService _itemSgInformationService;
         private readonly IItemAdditionalInformationService _itemAdditionalInformationService;
         private readonly IHQStockStatusService _hqStockStatusService;
-        private readonly IBranchStockRepository _branchStockService;
+        private readonly IBranchStockService _branchStockService;
+        private readonly IXRefService _xrefService;
 
         public ItemInquiryController(IItemRCInformationService itemRCInformationService, 
                                         IItemAdditionalInformationService itemAdditionalInformationService, 
+                                        IItemSgInformationService itemSgInformationService,
                                         IItemService itemService,
                                         IHQStockStatusService hqStockStatusService,
-                                        IBranchStockRepository branchStockService)
+                                        IBranchStockService branchStockService,
+                                        IXRefService xrefService)
         {
             _itemRCInformationService = itemRCInformationService;
             _itemAdditionalInformationService = itemAdditionalInformationService;
             _itemService = itemService;
             _hqStockStatusService = hqStockStatusService;
             _branchStockService = branchStockService;
+            _xrefService = xrefService;
+            _itemSgInformationService = itemSgInformationService;
         }
 
         public ActionResult Index(string ItemNo2nd)
@@ -51,6 +57,32 @@ namespace GIMS.Web.Controllers
                                     };
 
             return PartialView("ItemInformationRC", itemInformationRC);
+        }
+
+        [ChildActionOnly]
+        public ActionResult ItemInformationSG(string itemNo)
+        {
+            var itemInformationRC = _itemRCInformationService.Get(x => x.ItemNo2nd.Trim() == itemNo.Trim()) ??
+                        new ItemRCInformation
+                        {
+                            ItemNo2nd = itemNo
+                        };
+
+            var itemInformationSg = _itemSgInformationService.Get(x => x.ItemNo2nd.Trim() == itemNo.Trim()) ??
+                        new ItemSgInformation
+                        {
+                            ItemNo2nd = itemNo
+                        };
+
+
+            var itemInformationSG = 
+                                    new ItemInquiryVm
+                                    {
+                                        ItemRcInformation = itemInformationRC,
+                                        ItemSgInformation = itemInformationSg
+                                    };
+
+            return PartialView("ItemInformationSG", itemInformationSG);
         }
 
         [ChildActionOnly]
@@ -99,9 +131,9 @@ namespace GIMS.Web.Controllers
                     ? 0
                     : _itemService.Get(x => x.ItemNo2nd.Trim() == itemNo.Trim()).ShortItemNo;
 
-            var list = _branchStockService.GetBranchStockList(shortItemNo, x => x.Branch, x => x.Branch.BranchStocks);
+            var list = _xrefService.GetXrefList(shortItemNo, x => x.Item, x => x.XRefItem, x => x.XRefItem.XrefValue);
 
-            return PartialView("BranchStocks", list);
+            return PartialView("CrossReferenceList", list);
         }
 
     }

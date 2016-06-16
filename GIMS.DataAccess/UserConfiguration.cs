@@ -19,9 +19,9 @@ namespace GIMS.DataAccess
 
             Property(c => c.Username)
                 .IsRequired()
-                .HasMaxLength(50);
+                .HasMaxLength(60);
 
-            Property(c => c.EmailAddress)
+            Property(c => c.Email)
                 .IsRequired()
                 .HasMaxLength(100);
 

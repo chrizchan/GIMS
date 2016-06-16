@@ -24,89 +24,94 @@
     <![endif]-->
         @RenderSection("HeadContent", false)
     </head>
-<body class="skin-red sidebar-mini">
-    @RenderBody()
-    <div class="wrapper">
-        <header class="main-header">
-            <!-- Logo -->            
-            <a href="@Url.Action("Index", "Home", new { area = "" })" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                @*<span class="logo-mini"><b>G</b>ims</span>*@
-                <span class="logo-mini"><img src="@Url.Content("~/Content/Images/gims-logo-mini.png")" /></span>
-                <!-- logo for regular state and mobile devices -->
-                @*<span class="logo-lg"><b>SLS </b>Gims Portal</span>*@
-                <span class="logo-lg"><img src="@Url.Content("~/Content/Images/gims-logo.png")" /></span>
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
+    <body class="skin-red sidebar-mini">
+        @RenderBody()
+        <div class="wrapper">
+            <header class="main-header">
+                <!-- Logo -->            
+                <a href="@Url.Action("Index", "Home", new { area = "" })" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    @*<span class="logo-mini"><b>G</b>ims</span>*@
+                    <span class="logo-mini"><img src="@Url.Content("~/Content/Images/gims-logo-mini.png")" /></span>
+                    <!-- logo for regular state and mobile devices -->
+                    @*<span class="logo-lg"><b>SLS </b>Gims Portal</span>*@
+                    <span class="logo-lg"><img src="@Url.Content("~/Content/Images/gims-logo.png")" /></span>
                 </a>
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                @*<img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">*@
-                                <i class="fa fa-user"></i>
-                                <span class="hidden-xs">Logged in : Christian</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <p>
-                                        Christian
-                                        @*<small>Member since Cha</small>*@
-                                    </p>
-                                    <p>Test company</p>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account: style can be found in dropdown.less -->
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        @*<img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">*@
+                                        <i class="fa fa-user"></i>
+                                        <span class="hidden-xs">Logged in : @User.Identity.Name</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- User image -->
+                                        <li class="user-header">
+                                            <p>
+                                                @User.Identity.Name
+                                            </p>
+                                            @*<p>Test company</p>*@
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <li class="user-footer">
+                                            <div class="pull-left">
+                                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                            </div>
+                                            <div class="pull-right">
+                                                @if (Request.IsAuthenticated)
+                                                {
+                                                    <a href="@Url.RouteUrl("Default", new { action = "LogOff", controller = "Account" }, Request.Url.Scheme)" class="btn btn-default btn-flat">Sign out</a>
+                                                }
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- Left side column. contains the logo and sidebar -->
-            @Html.Partial("_LeftNav")
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    @RenderSection("PageTitleContent", false)
-                </h1>
-                <ol class="breadcrumb">
-                    @RenderSection("BreadCrumbContent", false)
-                </ol>
-            </section>
-            <!-- Main content -->
-            <section class="content">               
-                    @RenderSection("MainContent", true)               
-            </section><!-- /.content -->
-        </div><!-- /.content-wrapper -->
-        <footer class="main-footer">
-            @*<div class="pull-right hidden-xs">
-                <b>Version</b> 2.3.0
-            </div>*@
-            <strong>Copyright &copy; 2015-2016 <a href="http://www.slsbearings.com.sg/">SLS Bearings (S) Pte Ltd</a>.</strong> All rights reserved.
-        </footer>
+                            }
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+                @Html.Partial("_LeftNav")
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        @RenderSection("PageTitleContent", false)
+                    </h1>
+                    <ol class="breadcrumb">
+                        @RenderSection("BreadCrumbContent", false)
+                    </ol>
+                </section>
+                <!-- Main content -->
+                <section class="content">               
+                        @RenderSection("MainContent", true)               
+                </section><!-- /.content -->
+            </div><!-- /.content-wrapper -->
+            <footer class="main-footer">
+                @*<div class="pull-right hidden-xs">
+                    <b>Version</b> 2.3.0
+                </div>*@
+                <strong>Copyright &copy; 2015-2016 <a href="http://www.slsbearings.com.sg/">SLS Bearings (S) Pte Ltd</a>.</strong> All rights reserved.
+            </footer>
 
-        <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/AdminLTE")
-    @RenderSection("scripts", required: false)
-</body>
+            <div class="control-sidebar-bg"></div>
+        </div><!-- ./wrapper -->
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/AdminLTE")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

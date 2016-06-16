@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CNC.Core.Security;
 using GIMS.ViewModel.Configuration;
 
 
@@ -26,6 +27,11 @@ namespace GIMS.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
             MappingConfig.RegisterMaps();
+        }
+
+        protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
+        {
+            SecurityContext.ApplyNewPrincipal(this.Context);
         }
     }
 }

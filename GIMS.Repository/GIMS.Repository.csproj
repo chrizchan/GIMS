@@ -62,7 +62,13 @@
     <Compile Include="ItemAdditionalInformationRepository.cs" />
     <Compile Include="ItemRCInformationRepository.cs" />
     <Compile Include="ItemRepository.cs" />
+    <Compile Include="ItemSgInformationRepository.cs" />
+    <Compile Include="PermissionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolePermissionRepository.cs" />
+    <Compile Include="RoleRepository.cs" />
+    <Compile Include="UserRepository.cs" />
+    <Compile Include="UserRoleRepository.cs" />
     <Compile Include="WarehouserRepository.cs" />
     <Compile Include="XRefRepository.cs" />
   </ItemGroup>

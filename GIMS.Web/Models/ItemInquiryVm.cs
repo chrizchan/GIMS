@@ -15,7 +15,7 @@ namespace GIMS.Web.Models
 
         public ItemRCInformation ItemRcInformation { get; set; }
 
-        public ItemAdditionalInformationVm ItemAdditionalInformationVm { get; set; }
+        public ItemSgInformation ItemSgInformation { get; set; }
      
     }
 }

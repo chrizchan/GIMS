@@ -601,6 +601,8 @@
     <Content Include="Views\UserRequisition\Create.cshtml" />
     <Content Include="Views\ItemInquiry\BranchStocks.cshtml" />
     <Content Include="Views\ItemInquiry\CrossReferenceList.cshtml" />
+    <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Shared\_SingleMasterPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

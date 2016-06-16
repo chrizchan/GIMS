@@ -18,6 +18,9 @@ namespace GIMS.ViewModel.ItemInquiry
 
         public IList<BranchStock> BranchStocks { get; set; }
 
+        public string XrefItemNo2nd { get; set; }
+        public string ItemNo2nd { get; set; }
+
         //public IList<BranchStock> BranchStockList
         //{
         //    get

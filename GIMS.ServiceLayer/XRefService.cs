@@ -24,10 +24,17 @@ namespace GIMS.ServiceLayer
         {
             return _xRefRepository.GetAllItemSearchList(includes);
         }
+
+        public IList<XRef> GetXrefList(int shortItemNo, params Expression<Func<XRef, object>>[] includes)
+        {
+            return _xRefRepository.GetXrefList(shortItemNo, includes);
+        }
     }
 
     public interface IXRefService : IService<XRef>
     {
         IQueryable<ItemSearchListViewModel> GetAllItemSearchList(params Expression<Func<XRef, object>>[] includes);
+
+        IList<XRef> GetXrefList(int shortItemNo, params Expression<Func<XRef, object>>[] includes);
     }
 }

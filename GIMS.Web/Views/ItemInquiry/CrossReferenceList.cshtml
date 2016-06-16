@@ -1,1 +1,29 @@
-﻿
+﻿@model IEnumerable<GIMS.Entities.XRef>
+
+<div class="box-body table-responsive no-padding table-striped table-condensed">
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>XRef</th>
+                <th>Type</th>
+                <th>Exstock</th>
+                <th>LCPL</th>
+                <th>SP</th>
+                <th>Nett1</th>
+            </tr>
+            
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(item.XRefItem.ItemNo2nd, "Index", "ItemInquiry", new { ItemNo2nd = item.XRefItem.ItemNo2nd }, null)</td>
+                    <td>@item.Type</td>
+                    <td>@item.XRefItem.XrefValue.Exstock</td>
+                    <td>@item.XRefItem.XrefValue.LCPL</td>
+                    <td>@item.XRefItem.XrefValue.SP</td>
+                    <td>@item.XRefItem.XrefValue.Nett1</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

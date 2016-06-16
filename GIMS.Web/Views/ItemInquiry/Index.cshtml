@@ -1,4 +1,5 @@
-﻿
+﻿@using CNC.Core.Security
+
 
 @{
     ViewBag.Title = "Index";
@@ -29,18 +30,24 @@
     
     @using (Html.BeginForm("Index", "ItemInquiry", new { itemNo = ViewBag.ItemNo2nd }, FormMethod.Get, new { id = "itemInquiryForm", @class = "form-horizontal" }))
     {
+        if (((UserPrincipal) User).IsSLS)
         {
-            Html.RenderAction("ItemInformationRC", new { itemNo = ViewBag.ItemNo2nd });
+            {
+                Html.RenderAction("ItemInformationSg", new {itemNo = ViewBag.ItemNo2nd});
+            }
+        }
+        else
+        {
+            {
+                Html.RenderAction("ItemInformationRC", new { itemNo = ViewBag.ItemNo2nd });
+            }            
         }
 
-        Html.TextBox("ShortItemNo");
+        //Html.TextBox("ShortItemNo");
     }
     
-    @*@Html.Partial("AdditionalInformation",Model.ItemAdditionalInformationVm)*@
     @{Html.RenderAction("AdditionalInformation", new { itemNo = ViewBag.ItemNo2nd });}
 
-
-    @*@Html.Partial("StockStatus")*@
     @{Html.RenderAction("StockStatus", new { itemNo = ViewBag.ItemNo2nd });}
     
         <div class="row">
@@ -55,60 +62,7 @@
                             @{Html.RenderAction("BranchStocks", new { itemNo = ViewBag.ItemNo2nd });}
                         </div>
                         <div class="tab-pane " id="tab_2">
-                            <div class="box-body table-responsive no-padding table-striped table-condensed">
-                                <table class="table table-hover">
-                                    <tbody>
-                                        <tr>
-                                            <th>XRef</th>
-                                            <th>Type</th>
-                                            <th>Exstock</th>
-                                            <th>LCPL</th>
-                                            <th>SP</th>
-                                            <th>Nett1</th>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">205-BCA</a></td>
-                                            <td>SB</td>
-                                            <td>1</td>
-                                            <td>4.7451</td>
-                                            <td>4.2706</td>
-                                            <td>5.6942</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">6205-FAG </a></td>
-                                            <td>JP</td>
-                                            <td>1</td>
-                                            <td>4.7451</td>
-                                            <td>4.2706</td>
-                                            <td>5.6942</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">6205-FAG</a></td>
-                                            <td>SB</td>
-                                            <td>1</td>
-                                            <td>4.7451</td>
-                                            <td>4.2706</td>
-                                            <td>5.6942</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">6205-KOY </a></td>
-                                            <td>SB</td>
-                                            <td>1</td>
-                                            <td>4.7451</td>
-                                            <td>4.2706</td>
-                                            <td>5.6942</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">6205-NIS/Y </a></td>
-                                            <td>SB</td>
-                                            <td>1</td>
-                                            <td>4.7451</td>
-                                            <td>4.2706</td>
-                                            <td>5.6942</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            @{Html.RenderAction("CrossReferenceList", new { itemNo = ViewBag.ItemNo2nd });}
                         </div>
                     </div>
                 </div>

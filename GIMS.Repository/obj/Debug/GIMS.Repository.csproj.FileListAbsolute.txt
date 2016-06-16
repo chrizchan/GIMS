@@ -1,3 +1,4 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Repository.dll.config
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Repository.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.Repository.pdb
@@ -16,7 +17,6 @@ D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\EntityFramewor
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\EntityFramework.SqlServer.xml
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\AutoMapper.xml
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\System.Runtime.xml
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\obj\Debug\GIMS.Repository.pdb
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Repository\bin\Debug\GIMS.ServiceLayer.dll

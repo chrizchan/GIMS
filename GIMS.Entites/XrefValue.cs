@@ -11,7 +11,7 @@ namespace GIMS.Entities
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ShortItemNo { get; set; }
+        public int XRefShortItemNo { get; set; }
 
         public int Exstock { get; set; }
 
@@ -24,5 +24,7 @@ namespace GIMS.Entities
         public DateTime DateUpdated { get; set; }
 
         public Item Item { get; set; }
+
+        //public XRef XRef { get; set; }
     }
 }

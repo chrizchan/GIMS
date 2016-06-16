@@ -45,10 +45,21 @@ namespace GIMS.Repository
 
             return result;
         }
+
+        public IList<XRef> GetXrefList(int shortItemNo, params Expression<Func<XRef, object>>[] includes)
+        {
+            var query = includes.Aggregate(DbSet, (current, item) => current.Include(item));
+
+            var result = query.Where(x => x.ShortItemNo == shortItemNo);
+
+            return result.ToList();
+
+        }
     }
 
     public interface IXRefRepository : IRepository<XRef>
     {
         IQueryable<ItemSearchListViewModel> GetAllItemSearchList(params Expression<Func<XRef, object>>[] includes);
+        IList<XRef> GetXrefList(int shortItemNo, params Expression<Func<XRef, object>>[] includes);
     }  
 }

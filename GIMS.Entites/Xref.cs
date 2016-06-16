@@ -10,12 +10,12 @@ namespace GIMS.Entities
     public class XRef
     {
         [Key]
-        [Column(Order = 0)]
+        [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ShortItemNo { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int XRefShortItemNo { get; set; }
 
@@ -24,8 +24,14 @@ namespace GIMS.Entities
 
         public DateTime DateUpdated { get; set; }
 
+        [ForeignKey("ShortItemNo")]
         public Item Item { get; set; }
 
+        [ForeignKey("XRefShortItemNo")]
+        public Item XRefItem { get; set; }
+
+        //[ForeignKey("XRefShortItemNo")]
+        //public XrefValue XrefValue { get; set; }
         
     }
 }

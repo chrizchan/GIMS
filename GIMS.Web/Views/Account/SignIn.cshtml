@@ -1,0 +1,50 @@
+﻿@model GIMS.Web.Models.LoginModel
+           
+@{
+    ViewBag.Title = "Sign in";
+    Layout = "~/Views/Shared/_SingleMasterPage.cshtml";
+}
+@section MainContent{
+
+<div class="login-box">
+    <div class="login-logo">
+        <a href="/">
+            <span class="logo-lg"><img src="@Url.Content("~/Content/Images/gims-logo.png")" /></span>
+        </a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            if (!ViewData.ModelState.IsValid)
+            {
+                @Html.ValidationSummary(true, null, new { @class = "text-warning" })
+            }
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.UserName, new { placeholder = "Username", @class = "form-control" })
+                @Html.ValidationMessageFor(x=>x.UserName)
+                <span class="fa fa-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.Password, new { placeholder = "Password", type = "password", @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Password)
+                <span class="fa fa-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-7">
+                    <div class="checkbox icheck">
+                        <a href="#">Forgot your passwrod?</a>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+}
+    

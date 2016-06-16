@@ -12,13 +12,10 @@ namespace GIMS.Repository
 {
     public class BranchStockRepository : RepositoryBase<BranchStock>, IBranchStockRepository
     {
-        public List<BranchStockListViewModel> GetBranchStockList(int shortItemNo, params Expression<Func<BranchStock, object>>[] includes)
+        public IList<BranchStockListViewModel> GetBranchStockList(int shortItemNo, params Expression<Func<BranchStock, object>>[] includes)
         {
 
             //Db.Database.Log = message => Debug.WriteLine(message);
-
-            //var asd = DbSet.Include(x=>x.Branch).Include(x => x.Branch).Include(x => x.Warehouse).ToList();
-
 
             var query = includes.Aggregate(DbSet, (current, item) => current.Include(item));
 
@@ -36,35 +33,13 @@ namespace GIMS.Repository
 
             
 
-            //var warehouses = Db.Warehouses.ToList();
-            //var braches = Db.Branches.ToList();
-
-            //var list = result.ToList();
-
-            //foreach (var bs in list.SelectMany(item => item.BranchStocks))
-            //{
-            //    bs.Warehouse = warehouses.FirstOrDefault(x => x.WarehouseId== bs.WarehouseId && x.BranchId == bs.BranchId);
-            //    bs.Branch = braches.FirstOrDefault(x => x.BranchId == bs.BranchId);
-            //}
-
             return result.ToList();
         }
 
-        public List<BranchStock> GetAllBranchStock()
-        {
-
-            Db.Database.Log = message => Debug.WriteLine(message);
-
-            var asd = Db.BranchStocks.Include(x => x.Branch).Include(x => x.Warehouse).ToList();
-
-            return asd;
-        }
     }
 
     public interface IBranchStockRepository : IRepository<BranchStock>
     {
-        List<BranchStockListViewModel> GetBranchStockList(int shortItemNo, params Expression<Func<BranchStock, object>>[] includes);
-
-        List<BranchStock> GetAllBranchStock();
+        IList<BranchStockListViewModel> GetBranchStockList(int shortItemNo, params Expression<Func<BranchStock, object>>[] includes);
     }  
 }

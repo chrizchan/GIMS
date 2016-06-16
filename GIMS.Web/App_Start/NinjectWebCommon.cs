@@ -69,14 +69,27 @@ namespace GIMS.Web.App_Start
             kernel.Bind<IBranchStockRepository>().To<BranchStockRepository>();
             kernel.Bind<IXRefRepository>().To<XRefRepository>();
             kernel.Bind<IItemRCInformationRepository>().To<ItemRCInformationRepository>();
+            kernel.Bind<IItemSgInformationRepository>().To<ItemSgInformationRepository>();
             kernel.Bind<IHQStockStatusRepository>().To<HQStockStatusRepository>();
+            kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<IUserRoleRepository>().To<UserRoleRepository>();
+            kernel.Bind<IRoleRepository>().To<RoleRepository>();
+            kernel.Bind<IRolePermissionRepository>().To<RolePermissionRepository>();
+            kernel.Bind<IPermissionRepository>().To<PermissionRepository>();
+            
 
             kernel.Bind<IItemAdditionalInformationService>().To<ItemAdditionalInformationService>();
             kernel.Bind<IItemService>().To<ItemService>();
             kernel.Bind<IBranchStockService>().To<BranchStockService>();
             kernel.Bind<IXRefService>().To<XRefService>();
             kernel.Bind<IItemRCInformationService>().To<ItemRCInformationService>();
+            kernel.Bind<IItemSgInformationService>().To<ItemSgInformationService>();
             kernel.Bind<IHQStockStatusService>().To<HQStockStatusService>();
+            kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<IUserRoleService>().To<UserRoleService>();
+            kernel.Bind<IRoleService>().To<RoleService>();
+            kernel.Bind<IRolePermissionService>().To<RolePermissionService>();
+            kernel.Bind<IPermissionService>().To<PermissionService>();
         }        
     }
 }

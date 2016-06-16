@@ -1,3 +1,4 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\obj\Debug\GIMS.ServiceLayer.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\bin\Debug\GIMS.ServiceLayer.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\bin\Debug\GIMS.ServiceLayer.pdb
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\bin\Debug\GIMS.Entities.dll
@@ -15,6 +16,5 @@ D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\bin\Debug\EntityFramew
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\bin\Debug\GIMS.DataAccess.pdb
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\bin\Debug\AutoMapper.xml
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\bin\Debug\System.Runtime.xml
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\obj\Debug\GIMS.ServiceLayer.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\obj\Debug\GIMS.ServiceLayer.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.ServiceLayer\obj\Debug\GIMS.ServiceLayer.pdb

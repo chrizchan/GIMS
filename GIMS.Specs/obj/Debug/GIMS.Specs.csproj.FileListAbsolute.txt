@@ -66,3 +66,5 @@ D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Specs\bin\Debug\System.Runtime.xml
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Specs\obj\Debug\GIMS.Specs.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Specs\obj\Debug\GIMS.Specs.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Specs\obj\Debug\GIMS.Specs.pdb
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Specs\bin\Debug\CNC.Core.dll
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Specs\bin\Debug\CNC.Core.pdb

@@ -12,14 +12,35 @@ namespace GIMS.Entities
         [Required]        
         public int Id { get; set; }
 
-        [MaxLength(50)]
+        [MaxLength(60)]
         [Required(ErrorMessage = "Please enter the username")]
         public string Username { get; set; }
 
         [MaxLength(100)]
+        public string Password { get; set; }
+
+        [MaxLength(100)]
         [Display(Name = "Email Address")]
-        //[RequiredIf("RequireEmailAddress", true, ErrorMessage = "Please enter either email address or mobile no")]
-        public string EmailAddress { get; set; }
+        public string Email { get; set; }
+
+        [MaxLength(100)]
+        [Display(Name = "Firstname")]
+        public string FirstName { get; set; }
+
+        [MaxLength(100)]
+        [Display(Name = "Lastname")]
+        public string LastName { get; set; }
+        public bool Deleted { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsSLS { get; set; }
+
+        public int CreatedById { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+        public DateTime? ModifiedOn { get; set; }
+        public int? ModifiedById { get; set; }
+
+
 
     }
 }

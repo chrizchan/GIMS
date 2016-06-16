@@ -25,6 +25,14 @@ namespace GIMS.DataAccess
         public  DbSet<Warehouse> Warehouses { get; set; }
         public  DbSet<XrefValue> XrefValues { get; set; }
         public DbSet<XRef> Xrefs { get; set; }
+
+        public DbSet<Role> Roles { get; set; }
+
+        public DbSet<UserRole> UserRoles { get; set; }
+
+        public DbSet<Permission> Permissions { get; set; }
+
+        public DbSet<RolePermission> RolePermissions { get; set; }
         
 
 

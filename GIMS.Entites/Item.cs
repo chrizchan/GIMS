@@ -48,6 +48,8 @@ namespace GIMS.Entities
 
         public List<XRef> XRefs { get; set; }
 
+        [ForeignKey("ShortItemNo")]
+        public XrefValue XrefValue { get; set; }
 
     }
 }

@@ -12,6 +12,8 @@ namespace GIMS.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ShortItemNo { get; set; }
 
+        public string ItemNo2nd { get; set; }
+
         public decimal? ListN { get; set; }
 
         public decimal? ListN2 { get; set; }

@@ -43,6 +43,11 @@
   <ItemGroup>
     <Compile Include="Components\CCMVCHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\LogOnAuthorize.cs" />
+    <Compile Include="Security\SecurityContext.cs" />
+    <Compile Include="Security\StringEncryptor.cs" />
+    <Compile Include="Security\UserIdentity.cs" />
+    <Compile Include="Security\UserPrincipal.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

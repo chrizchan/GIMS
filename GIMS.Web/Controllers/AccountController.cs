@@ -5,7 +5,10 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using CNC.Core.Security;
 using DotNetOpenAuth.AspNet;
+using GIMS.Entities;
+using GIMS.ServiceLayer;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using GIMS.Web.Filters;
@@ -14,13 +17,31 @@ using GIMS.Web.Models;
 namespace GIMS.Web.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        //
-        // GET: /Account/Login
 
-        [AllowAnonymous]
+        private readonly IUserService _userService;
+        private readonly IUserRoleService _userRoleService;
+        private readonly IRoleService _roleService;
+        private readonly IRolePermissionService _rolePermissionService;
+        private readonly IPermissionService _permissionService;
+
+        public AccountController(IUserService userService,
+                                IUserRoleService userRoleService,
+                                IRoleService roleService,
+                                IRolePermissionService rolePermissionService,
+                                IPermissionService permissionService
+                                )
+        {
+            _userService = userService;
+            _userRoleService = userRoleService;
+            _roleService = roleService;
+            _rolePermissionService = rolePermissionService;
+            _permissionService = permissionService;
+        }
+
+        [System.Web.Mvc.AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -31,7 +52,7 @@ namespace GIMS.Web.Controllers
         // POST: /Account/Login
 
         [HttpPost]
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
@@ -48,11 +69,10 @@ namespace GIMS.Web.Controllers
         //
         // POST: /Account/LogOff
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
+            FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
         }
@@ -60,7 +80,7 @@ namespace GIMS.Web.Controllers
         //
         // GET: /Account/Register
 
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -70,7 +90,7 @@ namespace GIMS.Web.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
@@ -204,7 +224,7 @@ namespace GIMS.Web.Controllers
         // POST: /Account/ExternalLogin
 
         [HttpPost]
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
@@ -214,7 +234,7 @@ namespace GIMS.Web.Controllers
         //
         // GET: /Account/ExternalLoginCallback
 
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         public ActionResult ExternalLoginCallback(string returnUrl)
         {
             AuthenticationResult result = OAuthWebSecurity.VerifyAuthentication(Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
@@ -248,7 +268,7 @@ namespace GIMS.Web.Controllers
         // POST: /Account/ExternalLoginConfirmation
 
         [HttpPost]
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)
         {
@@ -293,13 +313,13 @@ namespace GIMS.Web.Controllers
         //
         // GET: /Account/ExternalLoginFailure
 
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         public ActionResult ExternalLoginFailure()
         {
             return View();
         }
 
-        [AllowAnonymous]
+        [System.Web.Mvc.AllowAnonymous]
         [ChildActionOnly]
         public ActionResult ExternalLoginsList(string returnUrl)
         {
@@ -328,7 +348,100 @@ namespace GIMS.Web.Controllers
             return PartialView("_RemoveExternalLoginsPartial", externalLogins);
         }
 
+
+
+        [System.Web.Mvc.AllowAnonymous]
+        public ActionResult SignIn(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        [System.Web.Mvc.AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult SignIn(LoginModel model, string returnUrl)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var info = _userService.ValidateUser(model.UserName, StringEncryptor.EncryptPassword(model.Password));
+
+                if (info != null)
+                {
+
+                    if (!info.IsActive)
+                    {
+                        ModelState.AddModelError("", "The account is not allowed to access. Please contact Administrator.");
+
+                    }
+                    else
+                    {
+
+                        string userPermission = "";
+
+
+                        var userRoleList = _userRoleService.GetMany(x => x.UserId == info.Id && !x.Role.Deleted);
+
+                        //foreach (var userRole in info.UserRoles.Where(x => !x.Role.Deleted))
+                        foreach (var userRole in userRoleList)
+                        {
+                            userRole.Role = _roleService.Get(x => x.Id == userRole.RoleId && !x.Deleted);
+
+                            if (userRole.Role != null)
+                            {
+                                userRole.Role.RolePermissions =
+                                    _rolePermissionService.GetMany(x => x.RoleId == userRole.RoleId);
+
+                                var rolePermission = userRole.Role.RolePermissions.Distinct().ToList();
+
+                                //userPermission += GetRoleString(userRole.Role.RolePermissions) + ",";
+                                userPermission += GetRoleString(rolePermission) + ",";
+                            }
+                        }
+
+
+                        SecurityContext.CreateAuthenticationCookie(info.Username.ToUpper(), true, info.Id, userPermission.TrimEnd(','), info.FirstName, info.LastName,info.IsSLS);
+
+                        if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                            && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                        {
+                            return Redirect(returnUrl);
+                        }
+
+
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+
+
+
         #region Helpers
+
+        private string GetRoleString(IList<RolePermission> roles)
+        {
+            var inlineRoles = string.Empty;
+
+            for (var x = 0; x < roles.Count(); x++)
+            {
+                int permissionId = roles[x].PermissionId;
+                inlineRoles += _permissionService.Get(y => y.Id == permissionId).Name + ",";  //roles[x].Role.Name + ",";
+            }
+
+            return inlineRoles.TrimEnd(',');
+        }
+
         private ActionResult RedirectToLocal(string returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl))

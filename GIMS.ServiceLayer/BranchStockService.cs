@@ -25,9 +25,9 @@ namespace GIMS.ServiceLayer
             return _branchStockRepository.GetAll(includes);
         }
 
-        public List<BranchStockListViewModel> GetBranchStockList(int shortItemNo)
+        public IList<BranchStockListViewModel> GetBranchStockList(int shortItemNo, params Expression<Func<BranchStock, object>>[] includes)
         {
-            var list = _branchStockRepository.GetBranchStockList(shortItemNo);
+            var list = _branchStockRepository.GetBranchStockList(shortItemNo, includes);
 
             return list;
         }
@@ -36,6 +36,6 @@ namespace GIMS.ServiceLayer
     public interface IBranchStockService : IService<BranchStock>
     {
         IQueryable<BranchStock> GetAll(params Expression<Func<BranchStock, object>>[] includes);
-        List<BranchStockListViewModel> GetBranchStockList(int shortItemNo);
+        IList<BranchStockListViewModel> GetBranchStockList(int shortItemNo, params Expression<Func<BranchStock, object>>[] includes);
     }
 }

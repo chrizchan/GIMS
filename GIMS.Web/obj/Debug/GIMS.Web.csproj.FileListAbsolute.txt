@@ -1,3 +1,5 @@
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.csproj.App.config
+D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.Web.dll.config
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.Web.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\GIMS.Web.pdb
@@ -119,7 +121,5 @@ D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\ko\System.Spatial.resources
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\ru\System.Spatial.resources.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\zh-Hans\System.Spatial.resources.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\bin\zh-Hant\System.Spatial.resources.dll
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.csproj.App.config
-D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.csprojResolveAssemblyReference.cache
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.dll
 D:\Cha\File\project 2015\Gims\Gims\GIMS\GIMS.Web\obj\Debug\GIMS.Web.pdb
